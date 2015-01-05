@@ -1,0 +1,4 @@
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Types\bin\Debug\ETicaret.Types.dll
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Types\bin\Debug\ETicaret.Types.pdb
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.dll
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.pdb

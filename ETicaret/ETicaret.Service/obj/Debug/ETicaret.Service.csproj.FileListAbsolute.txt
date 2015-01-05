@@ -1,0 +1,14 @@
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Service.dll.config
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Service.dll
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Service.pdb
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.dll
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.xml
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\obj\Debug\ETicaret.Service.csprojResolveAssemblyReference.cache
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\obj\Debug\ETicaret.Service.dll
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\obj\Debug\ETicaret.Service.pdb
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Data.dll
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Types.dll
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Data.pdb
+c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Types.pdb
