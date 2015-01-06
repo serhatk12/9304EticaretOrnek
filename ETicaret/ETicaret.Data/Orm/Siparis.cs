@@ -19,10 +19,8 @@ namespace ETicaret.Data.Orm
 
         [ForeignKey("KullaniciId")]
         public virtual Kullanici Kullanici { get; set; }
-
-        [ForeignKey("AdresId")]
-        public virtual KullaniciAdres Adres{get;set;}
-
+    
+        //HACK Adresin ilişkisini ekle
         public virtual List<SiparisDetay> Detaylar { get; set; }
     }
 }

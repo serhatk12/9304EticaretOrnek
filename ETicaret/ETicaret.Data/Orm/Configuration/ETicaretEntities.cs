@@ -21,6 +21,7 @@ namespace ETicaret.Data.Orm.Configration
             base.OnModelCreating(modelBuilder);
         }
 
+        public DbSet<Yonetici> Yonetici { get; set; }
         public DbSet<Kategori> Kategori { get; set; }
 
         public DbSet<Kullanici> Kullanici { get; set; }

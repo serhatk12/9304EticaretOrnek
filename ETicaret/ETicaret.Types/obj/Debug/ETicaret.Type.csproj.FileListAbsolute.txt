@@ -2,3 +2,8 @@ c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.T
 c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Types\bin\Debug\ETicaret.Types.pdb
 c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.dll
 c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\bin\Debug\ETicaret.Types.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\bin\Debug\ETicaret.Types.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Type.csprojResolveAssemblyReference.cache
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.pdb

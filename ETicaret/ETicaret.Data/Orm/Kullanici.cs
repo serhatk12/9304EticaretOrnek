@@ -39,5 +39,7 @@ namespace ETicaret.Data.Orm
         public string Telefon { get; set; }
 
         public virtual List<KullaniciAdres>  Adresler { get; set; }
+
+        public virtual List<Siparis> Siparisler { get; set; }
     }
 }

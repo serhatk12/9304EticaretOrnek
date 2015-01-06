@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="DataServices\Base\ServiceBase.cs" />
     <Compile Include="DataServices\KullaniciServis.cs" />
+    <Compile Include="DataServices\YoneticiServis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServisNoktasi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Orm\Configuration\ETicaretEntities.cs" />
     <Compile Include="Orm\Kategori.cs" />
     <Compile Include="Orm\Kullanici.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Orm\Siparis.cs" />
     <Compile Include="Orm\SiparisDetay.cs" />
     <Compile Include="Orm\Urun.cs" />
+    <Compile Include="Orm\Yonetici.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

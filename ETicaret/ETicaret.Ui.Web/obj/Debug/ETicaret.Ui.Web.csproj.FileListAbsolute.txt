@@ -20,3 +20,38 @@ c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.U
 c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Ui.Web\obj\Debug\ETicaret.Ui.Web.csprojResolveAssemblyReference.cache
 c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Ui.Web\obj\Debug\ETicaret.Ui.Web.dll
 c:\users\ilker.erhalim\documents\visual studio 2013\Projects\ETicaret\ETicaret.Ui.Web\obj\Debug\ETicaret.Ui.Web.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\obj\Debug\ETicaret.Ui.Web.csprojResolveAssemblyReference.cache
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\obj\Debug\ETicaret.Ui.Web.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Ui.Web.dll.config
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Ui.Web.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Ui.Web.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\Antlr3.Runtime.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\EntityFramework.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Data.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Service.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Types.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\Newtonsoft.Json.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Helpers.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Mvc.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Optimization.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Razor.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Webpages.Deployment.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Webpages.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Webpages.Razor.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\WebGrease.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Data.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Service.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Types.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\Antlr3.Runtime.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\EntityFramework.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\Newtonsoft.Json.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Optimization.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Razor.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Webpages.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Webpages.Deployment.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Webpages.Razor.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Helpers.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\System.Web.Mvc.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\obj\Debug\ETicaret.Ui.Web.pdb
