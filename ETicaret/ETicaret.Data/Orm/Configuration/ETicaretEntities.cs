@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity.ModelConfiguration.Conventions;
+
 namespace ETicaret.Data.Orm.Configration
 {
     public class ETicaretEntities : DbContext
@@ -12,14 +13,11 @@ namespace ETicaret.Data.Orm.Configration
         public ETicaretEntities()
         {
             Database.Connection.ConnectionString = "server=127.0.0.1;database=ETicaret;uid=sa;pwd=1234567?";
-
         }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
             base.OnModelCreating(modelBuilder);
         }
 
@@ -38,6 +36,5 @@ namespace ETicaret.Data.Orm.Configration
         public DbSet<SiparisDetay> SiparisDetay { get; set; }
 
         public DbSet<Urun> Urun { get; set; }
-
     }
 }

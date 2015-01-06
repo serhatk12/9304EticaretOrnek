@@ -9,9 +9,10 @@ namespace ETicaret.Data.Orm
 {
     public class Marka : ModelBase
     {
-        [Required(ErrorMessage = "Bu alan boş geçilemez")]
+        [Required(ErrorMessage = "Marka adı boş geçilemez.")]
         [Display(Name = "Marka Adı")]
         public string Ad { get; set; }
+
         [Display(Name="Marka Açıklaması")]
         public string Aciklama { get; set; }
 

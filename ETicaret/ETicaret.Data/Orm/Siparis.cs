@@ -10,7 +10,6 @@ namespace ETicaret.Data.Orm
 {
     public class Siparis : ModelBase
     {
-
         public int KullaniciId { get; set; }
 
         public int AdresId { get; set; }

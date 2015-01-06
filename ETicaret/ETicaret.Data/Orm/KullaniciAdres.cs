@@ -12,15 +12,16 @@ namespace ETicaret.Data.Orm
     {
         public int KullaniciId { get; set; }
 
-        [Required(ErrorMessage="Bu alan boş geçilemez")]
-        [Display(Name="Adresiniz için bir ad seçiniz")]
+        [Required(ErrorMessage="Adres adı boş geçilemez.")]
+        [Display(Name="Adresiniz için bir ad giriniz")]
         public string AdresAdi { get; set; }
-        [Required(ErrorMessage="Bu alan boş geçilemez")]
-        [Display(Name="Sehir/Ilce")]
+
+        [Required(ErrorMessage="Şehir boş geçilemez.")]
+        [Display(Name="Şehir")]
         public string Sehir { get; set; }
 
-        [Required(ErrorMessage="Bu alan boş geçilemez")]
-        [Display(Name="Adresinizi giriniz")]
+        [Required(ErrorMessage="Adres boş geçilemez.")]
+        [Display(Name="Adresiniz")]
         public string Adres { get; set; }
 
         [ForeignKey("KullaniciId")]

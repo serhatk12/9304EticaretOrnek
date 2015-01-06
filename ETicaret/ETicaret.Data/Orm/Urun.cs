@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace ETicaret.Data.Orm
 {
-
     public class Urun : ModelBase
     {
-        [Required(ErrorMessage = "Bu alan boş geçilemez")]
+        [Required(ErrorMessage = "Ürün adı boş geçilemez.")]
         [Display(Name = "Ürün Adı")]
         public string Ad { get; set; }
 
@@ -22,12 +21,11 @@ namespace ETicaret.Data.Orm
         public Decimal Fiyat { get; set; }
 
         [Display(Name = "İndirim %")]
-        [Range(0, 99, ErrorMessage = "Lütfen 0 ile 99 arasında bir değer girin")]
+        [Range(0, 99, ErrorMessage = "Lütfen 0 ile 99 arasında bir sayı girin.")]
         public int IndirimYuzde { get; set; }
 
         [Display(Name = "Kalan Miktar")]
         public int StokMiktar { get; set; }
-        public virtual List<Resim> Resimler { get; set; }
 
         public string SayfaYolu { get; set; }
 
@@ -49,5 +47,6 @@ namespace ETicaret.Data.Orm
             }
         }
 
+        public virtual List<Resim> Resimler { get; set; }
     }
 }

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Orm\Configration\ETicaretEntities.cs" />
+    <Compile Include="Orm\Configuration\ETicaretEntities.cs" />
     <Compile Include="Orm\Kategori.cs" />
     <Compile Include="Orm\Kullanici.cs" />
     <Compile Include="Orm\KullaniciAdres.cs" />

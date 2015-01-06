@@ -12,7 +12,7 @@ namespace ETicaret.Data.Orm
         [Key]
         public int Id { get; set; }
 
-        public bool Silindimi { get; set; }
+        public bool SilindiMi { get; set; }
 
         public DateTime EklenmeTarihi{get; set;}
 

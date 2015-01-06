@@ -10,32 +10,33 @@ namespace ETicaret.Data.Orm
 {
     public class Kullanici : ModelBase
     {
-        [EmailAddress(ErrorMessage = "Lütfen uygun bir E-posta Adresi Giriniz")]
-        [Required(ErrorMessage = "Bu alan boş geçilemez")]
-        [Display(Name = "E postanız")]
+        [EmailAddress(ErrorMessage = "Lütfen geçerli bir e-posta adresi giriniz.")]
+        [Required(ErrorMessage = "E-posta adresi boş geçilemez.")]
+        [Display(Name = "E-posta Adresiniz")]
         public string Eposta { get; set; }
 
-        [MinLength(6, ErrorMessage = "Şifre en az 6 karakter olmalı")]
-        [Required(ErrorMessage = "Şifre boş geçilemez")]
+        [MinLength(6, ErrorMessage = "Şifre en az 6 karakter olmalıdır.")]
+        [Required(ErrorMessage = "Şifre boş geçilemez.")]
         [Display(Name = "Şifreniz")]
         public string Sifre { get; set; }
 
         [NotMapped]
-        [Compare("Sifre", ErrorMessage = "Şifreler uyuşmuyor.")]
+        [Compare("Sifre", ErrorMessage = "Şifreler aynı değil.")]
         [Display(Name = "Şifreniz (Tekrar)")]
         public string SifreTekrar { get; set; }
 
-        [Required(ErrorMessage = "Bu alan boş geçilemez")]
+        [Required(ErrorMessage = "Ad boş geçilemez.")]
         [Display(Name = "Adınız")]
         public string Ad { get; set; }
-        [Required(ErrorMessage = "Bu alan boş geçilemez")]
+
+        [Required(ErrorMessage = "Soyad boş geçilemez.")]
         [Display(Name = "Soyadınız")]
         public string Soyad { get; set; }
-        [Phone(ErrorMessage = "Lütfen uygun bir telefon numarası giriniz")]
-        [Required(ErrorMessage="Bu alan boş geçilemez")]
-        [Display(Name="Lütfen telefon numaranızı giriniz")]
-        public string Telefon { get; set; }
 
+        [Phone(ErrorMessage = "Lütfen geçerli bir telefon numarası giriniz.")]
+        [Required(ErrorMessage="Telefon numarası boş geçilemez.")]
+        [Display(Name="Telefon numaranız")]
+        public string Telefon { get; set; }
 
         public virtual List<KullaniciAdres>  Adresler { get; set; }
     }

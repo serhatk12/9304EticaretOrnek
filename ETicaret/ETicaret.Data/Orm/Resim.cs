@@ -17,7 +17,6 @@ namespace ETicaret.Data.Orm
 
         public string BuyukYol { get; set; }
 
-
         [ForeignKey("UrunId")]
         public virtual Urun Urun { get; set; }
     }
