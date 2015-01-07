@@ -26,3 +26,17 @@ C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Serv
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.xml
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\obj\Debug\ETicaret.Service.pdb
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Service.dll.config
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Service.dll
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Service.pdb
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.dll
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Data.dll
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Types.dll
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Data.pdb
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Types.pdb
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.xml
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\obj\Debug\ETicaret.Service.csprojResolveAssemblyReference.cache
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\obj\Debug\ETicaret.Service.dll
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\obj\Debug\ETicaret.Service.pdb

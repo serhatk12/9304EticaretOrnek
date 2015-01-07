@@ -17,6 +17,18 @@ namespace ETicaret.Data.Orm.Configration
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Siparis>()
+                    .HasRequired<Kullanici>(x => x.Kullanici)
+                    .WithMany(x => x.Siparisler)
+                    .HasForeignKey(x => x.KullaniciId)
+                    .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<KullaniciAdres>()
+                .HasRequired<Kullanici>(x => x.Kullanici)
+                .WithMany(x => x.Adresler)
+                .HasForeignKey(x => x.KullaniciId)
+               .WillCascadeOnDelete(false);
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
         }

@@ -7,3 +7,8 @@ C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Type
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Type.csprojResolveAssemblyReference.cache
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.dll
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.pdb
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\bin\Debug\ETicaret.Types.dll
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\bin\Debug\ETicaret.Types.pdb
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Type.csprojResolveAssemblyReference.cache
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.dll
+C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Types\obj\Debug\ETicaret.Types.pdb
