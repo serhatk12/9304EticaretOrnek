@@ -13,10 +13,16 @@ namespace ETicaret.Ui.Web.App_Start
         {
             bundles.Add(new ScriptBundle("~/adminLayoutScripts")
                 .Include(
-                "~/Scripts/Plugins/Jquery/jquery.js",
+                "~/Scripts/Plugins/Jquery/jquery-2.1.3.min.js",
                 "~/Scripts/Plugins/Jquery/bootstrap.min.js",
                 "~/Scripts/Plugins/metisMenu/metisMenu.min.js",
-                "~/Scripts/Plugins/Theme/sb-admin.js"
+                "~/Scripts/Theme/sb-admin-2.js"
+                )
+                );
+            bundles.Add(new ScriptBundle("~/formScripts")
+                .Include(
+                "~/Scripts/Plugins/Jquery/jquery.validate.min.js",
+                "~/Scripts/Plugins/Jquery/jquery.validate.unobtrusive.min.js"
                 )
                 );
 
@@ -24,13 +30,13 @@ namespace ETicaret.Ui.Web.App_Start
                 .Include(
                 "~/Content/css/bootstrap.min.css",
                 "~/Content/css/plugins/metisMenu.min.css",
-                "~/Content/css/sb-admin.css",
+                "~/Content/css/sb-admin-2.css",
                 "~/Content/font-awesome-4.1.0/css/font-awesome.min.css"
                 
                 )
 
                 );
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

@@ -7,31 +7,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Web.Security;
 namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 {
     public class GirisController : Controller
     {
 
-        public ViewResult Index()
+        public ActionResult Index()
         {
+            if(HttpContext.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "YoneticiAnasayfa");
+            }
+            // TempData Actionlar arası veri taşımak için kullanıbilir.
+            var routeValues = TempData["routeValues"];
+            TempData["yonlendirmeDegerleri"] = routeValues;
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(GirisModel model)
         {
+
             using (ServisNoktasi servis = new ServisNoktasi())
             {
-                Yonetici yonetici = new Yonetici();
-                yonetici.KullaniciAdi = model.KullaniciAdi;
-                yonetici.Sifre = model.Sifre;
-                IslemSonucu sonuc = servis.Yonetici.GirisYap(yonetici);
-                if(!sonuc.BasariliMi)
+
+             
+                if(ModelState.IsValid)
                 {
-                    ModelState.AddModelError("HataliGiris", sonuc.Mesaj);
-                    return View();
+                    Yonetici yonetici = new Yonetici();
+                    yonetici.KullaniciAdi = model.KullaniciAdi;
+                    yonetici.Sifre = model.Sifre;
+                    IslemSonucu sonuc = servis.Yonetici.GirisYap(yonetici);
+                    if (!sonuc.BasariliMi)
+                    {
+                        ModelState.AddModelError("HataliGiris", sonuc.Mesaj);
+                        return View();
+                    }
+                    string userInfo = String.Format("{0};{1}",yonetici.Id,yonetici.KullaniciAdi);
+                    FormsAuthentication.SetAuthCookie(userInfo, true);
+
+                    var routeValues = TempData["yonlendirmeDegerleri"];
+                    if(routeValues!=null)
+                    {
+                        return RedirectToRoute(routeValues);
+                    }
+                    return RedirectToAction("Index", "YoneticiAnasayfa");
                 }
+            
                 return View();
                
             }

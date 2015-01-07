@@ -2,23 +2,28 @@
 
 namespace ETicaret.Ui.Web.Areas.Yonetim
 {
-    public class YonetimAreaRegistration : AreaRegistration 
+    public class YonetimAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Yonetim";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
-  
+
             context.MapRoute(
                 "Yonetim_default",
                 "Yonetim/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new
+                {
+                    controller = "YoneticiAnasayfa",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                }
             );
         }
     }

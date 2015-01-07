@@ -14,11 +14,16 @@ namespace ETicaret.Service.DataServices
     {
         public YoneticiServis(ETicaretEntities context) : base(context) { }
 
-        public IslemSonucu GirisYap(Yonetici model)
+        public IslemSonucu GirisYap( Yonetici model)
         {
+          
             Yonetici yonetici = Db.Yonetici.FirstOrDefault(x => x.KullaniciAdi == model.KullaniciAdi && x.Sifre == model.Sifre);
             if (yonetici == null) { return Hatali("Kullanıcı tespit edilemedi."); }
-            model = yonetici;
+
+            model.Id = yonetici.Id;
+            model.KullaniciAdi = yonetici.KullaniciAdi;
+            model.Soyadi = yonetici.Soyadi;
+
             return Basarili("");
         }
 
