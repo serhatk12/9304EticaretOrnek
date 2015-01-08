@@ -17,7 +17,8 @@ namespace ETicaret.Data.Orm
         [Display(Name="Kategori Adı")]
         public string Ad { get; set; }
 
-        [Display(Name="Kategori Açıklaması")]
+        //HACK 'Ç' harfini desteklemiyor
+        [Display(Name="Kategori Acıklaması")]
         public string Aciklama { get; set; }
 
         public string SayfaYolu { get; set; }

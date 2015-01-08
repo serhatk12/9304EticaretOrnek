@@ -118,9 +118,12 @@
     <Content Include="Areas\Yonetim\Views\Shared\_YoneticiLayout.cshtml" />
     <Content Include="Areas\Yonetim\Views\YoneticiAnasayfa\Index.cshtml" />
     <Content Include="Areas\Yonetim\Views\Shared\Partial\_sideBar.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Kategori\Ekle.cshtml" />
     <None Include="Scripts\Plugins\Jquery\jquery-2.1.3-vsdoc.js" />
+    <Content Include="Scripts\Custom\FormIslemleri.js" />
     <Content Include="Scripts\Plugins\Jquery\jquery-2.1.3.min.js" />
     <None Include="Scripts\Plugins\Jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Plugins\Jquery\jquery.form.min.js" />
     <Content Include="Scripts\Plugins\Jquery\jquery.validate.min.js" />
     <Content Include="Scripts\Plugins\Jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Plugins\flot\excanvas.min.js" />
@@ -145,9 +148,11 @@
     <Compile Include="Areas\Yonetim\Attributes\LoginRequired.cs" />
     <Compile Include="Areas\Yonetim\Controllers\BaseController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\GirisController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\KategoriController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\YoneticiAnasayfaController.cs" />
     <Compile Include="Areas\Yonetim\Models\GirisModel.cs" />
     <Compile Include="Areas\Yonetim\YonetimAreaRegistration.cs" />
+    <Compile Include="Attributes\ValidRequired.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,6 +215,10 @@
     <ProjectReference Include="..\ETicaret.Data\ETicaret.Data.csproj">
       <Project>{40911f45-9306-4d03-beed-21eb4db120a8}</Project>
       <Name>ETicaret.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ETicaret.Extensions\ETicaret.Extensions.csproj">
+      <Project>{85a9ff0e-2726-469b-95c5-61910a340572}</Project>
+      <Name>ETicaret.Extensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\ETicaret.Service\ETicaret.Service.csproj">
       <Project>{387c4ac3-8b73-456e-9d36-3f7e5b40b06a}</Project>

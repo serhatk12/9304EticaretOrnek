@@ -87,10 +87,10 @@ namespace ETicaret.Service.DataServices.Base
         public virtual IslemSonucu Ekle(TEntity entity)
         {
             entity.EklenmeTarihi = DateTime.Now;
-            entity.SilindiMi = false;           //Buna gerek var mı?(Erhan) var (ilker)
+            entity.SilindiMi = false;        
             _dbSet.Add(entity);
             Db.SaveChanges();
-            return Basarili("Kayıt başarıyla eklenmiştir.");
+            return Basarili("Kayıt başarıyla eklenmiştir.",entity.Id);
         }
 
         public virtual IslemSonucu Duzenle(TEntity entity)

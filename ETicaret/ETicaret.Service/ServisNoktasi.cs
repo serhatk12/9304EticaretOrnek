@@ -21,6 +21,7 @@ namespace ETicaret.Service
 
         private YoneticiServis _yoneticiService;
 
+        private KategoriServis _kategoriService;
        
 
         #endregion
@@ -37,6 +38,14 @@ namespace ETicaret.Service
                 }
 
                 return _yoneticiService;
+            }
+        }
+
+        public KategoriServis Kategori
+        {
+            get
+            {
+                return _kategoriService ?? (_kategoriService = new KategoriServis(_context));
             }
         }
 

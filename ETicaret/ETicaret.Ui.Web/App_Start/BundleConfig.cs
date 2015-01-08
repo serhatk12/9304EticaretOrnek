@@ -22,7 +22,9 @@ namespace ETicaret.Ui.Web.App_Start
             bundles.Add(new ScriptBundle("~/formScripts")
                 .Include(
                 "~/Scripts/Plugins/Jquery/jquery.validate.min.js",
-                "~/Scripts/Plugins/Jquery/jquery.validate.unobtrusive.min.js"
+                "~/Scripts/Plugins/Jquery/jquery.validate.unobtrusive.min.js",
+                "~/Scripts/Plugins/Jquery/jquery.form.min.js"
+                ,"~/Scripts/Custom/FormIslemleri.js"
                 )
                 );
 

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
+}
+@model ETicaret.Data.Orm.Kategori
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Kategori Ekle</h1>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Kategori Ekle
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Ekle", "Kategori", FormMethod.Post, new { @role = "form",@class="ajaxform"}))
+            {
+                @Html.TextGroupFor(x => x.Ad)
+                @Html.TextAreaGroupFor(x => x.Aciklama)
+                @Html.DropDownGroupFor(x => x.UstKategori, "kategoriListe", "Yeni bir üst kategori oluşturmak istiyorum")
+                @Html.SubmitButton("Kaydet")
+            }
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/formScripts")
+}

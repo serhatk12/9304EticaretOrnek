@@ -22,7 +22,7 @@ namespace ETicaret.Service.DataServices
 
             model.Id = yonetici.Id;
             model.KullaniciAdi = yonetici.KullaniciAdi;
-            model.Soyadi = yonetici.Soyadi;
+          
 
             return Basarili("");
         }

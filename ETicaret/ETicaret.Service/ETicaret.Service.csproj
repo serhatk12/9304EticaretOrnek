@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataServices\Base\ServiceBase.cs" />
+    <Compile Include="DataServices\KategoriServis.cs" />
     <Compile Include="DataServices\KullaniciServis.cs" />
     <Compile Include="DataServices\YoneticiServis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +62,10 @@
     <ProjectReference Include="..\ETicaret.Data\ETicaret.Data.csproj">
       <Project>{40911f45-9306-4d03-beed-21eb4db120a8}</Project>
       <Name>ETicaret.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ETicaret.Extensions\ETicaret.Extensions.csproj">
+      <Project>{85a9ff0e-2726-469b-95c5-61910a340572}</Project>
+      <Name>ETicaret.Extensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\ETicaret.Types\ETicaret.Type.csproj">
       <Project>{ee792949-26ab-4863-b4ed-0247d326daa1}</Project>
