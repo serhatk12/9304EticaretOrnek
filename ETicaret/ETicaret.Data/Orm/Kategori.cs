@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ETicaret.Data.Orm
 {   
-    public class Kategori :ModelBase
+    public class Kategori : ModelBase
     {
         //Kullanıcıya görünecek değer
         [Display(Name="Üst Kategori")]

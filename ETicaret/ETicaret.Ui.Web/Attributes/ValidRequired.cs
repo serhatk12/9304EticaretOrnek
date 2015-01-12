@@ -15,13 +15,12 @@ namespace ETicaret.Ui.Web.Attributes
             {
                 IslemSonucu  sonuc = new IslemSonucu{
                     BasariliMi = false,
-                    Mesaj ="Girmiş olduğunuz değerler uygun değildir.",
+                    Mesaj ="Girmiş olduğunuz değerler uygun değildir. Sayfayı yenileyip tekrar deneyin.",
                 };
                 filterContext.Result = new JsonResult()
                 {
                     Data = sonuc.JsonaCevir(),
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-
                 };
             }
             base.OnActionExecuting(filterContext);

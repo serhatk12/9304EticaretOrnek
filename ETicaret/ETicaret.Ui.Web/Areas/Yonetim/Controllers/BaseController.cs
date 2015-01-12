@@ -19,11 +19,9 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
             Servis = new ServisNoktasi();
         }
 
-
         protected override void Dispose(bool disposing)
         {
             Servis.Dispose();
-
             base.Dispose(disposing);
         }
 
@@ -31,7 +29,5 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
         {
             return Json(sonuc.JsonaCevir(), JsonRequestBehavior.AllowGet);
         }
-        
-       
     }
 }

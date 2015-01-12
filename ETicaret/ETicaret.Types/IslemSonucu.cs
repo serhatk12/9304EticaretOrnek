@@ -23,7 +23,6 @@ namespace ETicaret.Types
                 KayitId = this.KayitId,
                 Mesaj = this.Mesaj
             };
-
         }
     }
 }

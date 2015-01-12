@@ -7,13 +7,10 @@ namespace ETicaret.Ui.Web.Models
 {
     public static class CurrentUser
     {
-
         public static int Id
         {
             get
-            {
-             
-
+            {          
                 return Convert.ToInt32(HttpContext.Current.User.Identity.Name.Split(';')[0]);
             }
         }

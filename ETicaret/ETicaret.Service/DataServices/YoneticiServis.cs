@@ -12,18 +12,21 @@ namespace ETicaret.Service.DataServices
 {
     public class YoneticiServis : ServiceBase<Yonetici>
     {
-        public YoneticiServis(ETicaretEntities context) : base(context) { }
-
-        public IslemSonucu GirisYap( Yonetici model)
+        public YoneticiServis(ETicaretEntities context)
+            : base(context)
         {
-          
-            Yonetici yonetici = Db.Yonetici.FirstOrDefault(x => x.KullaniciAdi == model.KullaniciAdi && x.Sifre == model.Sifre);
-            if (yonetici == null) { return Hatali("Kullanıcı tespit edilemedi."); }
 
+        }
+
+        public IslemSonucu GirisYap(Yonetici model)
+        {
+            Yonetici yonetici = Db.Yonetici.FirstOrDefault(x => x.KullaniciAdi == model.KullaniciAdi && x.Sifre == model.Sifre);
+            if (yonetici == null)
+            {
+                return Hatali("Kullanıcı tespit edilemedi.");
+            }
             model.Id = yonetici.Id;
             model.KullaniciAdi = yonetici.KullaniciAdi;
-          
-
             return Basarili("");
         }
 
@@ -45,9 +48,8 @@ namespace ETicaret.Service.DataServices
             Yonetici yonetici = Bul(entity.Id);
             yonetici.KullaniciAdi = entity.KullaniciAdi;
             yonetici.Sifre = entity.Sifre;
-            yonetici.Soyadi = entity.Soyadi;
+            yonetici.Soyad = entity.Soyad;
             return base.Duzenle(yonetici);
         }
-
     }
 }

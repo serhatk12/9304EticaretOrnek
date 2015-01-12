@@ -17,6 +17,7 @@ namespace ETicaret.Service.DataServices.Base
         private DbSet<TEntity> _dbSet;
         private IslemSonucu _basarili;
         private IslemSonucu _hatali;
+
         public ServiceBase(ETicaretEntities dbContext)
         {
             this.Db = dbContext;
@@ -45,7 +46,8 @@ namespace ETicaret.Service.DataServices.Base
         #endregion
 
 
-        #region ReturnTypes
+        #region Return Types
+
         public IslemSonucu Basarili(string mesaj)
         {
             _basarili.Mesaj = mesaj;
@@ -74,15 +76,7 @@ namespace ETicaret.Service.DataServices.Base
         #endregion
 
 
-        public virtual IslemSonucu Sil(int id)
-        {
-            TEntity entity = _dbSet.Find(id);
-            entity.SilindiMi = true;
-            entity.SilinmeTarihi = DateTime.Now;
-            Db.SaveChanges();
-            return Basarili("Kayıt başarıyla silinmiştir", id);
-
-        }
+        #region Insert-Update-Delete
 
         public virtual IslemSonucu Ekle(TEntity entity)
         {
@@ -99,5 +93,16 @@ namespace ETicaret.Service.DataServices.Base
             Db.SaveChanges();
             return Basarili("Kayıt başarıyla güncellenmiştir");
         }
+
+        public virtual IslemSonucu Sil(int id)
+        {
+            TEntity entity = _dbSet.Find(id);
+            entity.SilindiMi = true;
+            entity.SilinmeTarihi = DateTime.Now;
+            Db.SaveChanges();
+            return Basarili("Kayıt başarıyla silinmiştir", id);
+        }
+
+        #endregion
     }
 }

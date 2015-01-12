@@ -12,25 +12,26 @@ namespace ETicaret.Service.DataServices
 {
     public class KullaniciServis : ServiceBase<Kullanici>
     {
-        public KullaniciServis(ETicaretEntities dbContext):base(dbContext)
+        public KullaniciServis(ETicaretEntities dbContext)
+            : base(dbContext)
         {
 
         }
 
         public override IslemSonucu Ekle(Kullanici entity)
         {
-            if(Db.Kullanici.Any(x=>x.Eposta==entity.Eposta))
+            if (Db.Kullanici.Any(x => x.Eposta == entity.Eposta))
             {
-                return Hatali("Aynı EPosta adresine sahip başka bir kullanıcı mevcuttur.");
+                return Hatali("Aynı e-posta adresine sahip başka bir kullanıcı mevcuttur.");
             }
             return base.Ekle(entity);
         }
 
         public override IslemSonucu Duzenle(Kullanici entity)
         {
-            if(Db.Kullanici.Any(x=>x.Eposta==entity.Eposta && entity.Id != x.Id))
+            if (Db.Kullanici.Any(x => x.Eposta == entity.Eposta && entity.Id != x.Id))
             {
-                return Hatali("Aynı EPosta adresine sahip başka bir kullanıcı mevcuttur.");
+                return Hatali("Aynı e-posta adresine sahip başka bir kullanıcı mevcuttur.");
             }
             Kullanici kayit = Bul(entity.Id);
             if (kayit == null) return Hatali("Kullanıcı tespit edilemedi");

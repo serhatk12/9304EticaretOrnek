@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ETicaret.Data.Orm
 {
-    public class KullaniciAdres :ModelBase
+    public class KullaniciAdres : ModelBase
     {
         public int KullaniciId { get; set; }
 

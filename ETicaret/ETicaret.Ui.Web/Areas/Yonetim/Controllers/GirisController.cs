@@ -12,7 +12,6 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 {
     public class GirisController : Controller
     {
-
         public ActionResult Index()
         {
             if(HttpContext.User.Identity.IsAuthenticated)
@@ -28,11 +27,8 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
         [HttpPost]
         public ActionResult Index(GirisModel model)
         {
-
             using (ServisNoktasi servis = new ServisNoktasi())
-            {
-
-             
+            {             
                 if(ModelState.IsValid)
                 {
                     Yonetici yonetici = new Yonetici();

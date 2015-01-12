@@ -34,6 +34,7 @@ namespace ETicaret.Data.Orm.Configration
         }
 
         public DbSet<Yonetici> Yonetici { get; set; }
+
         public DbSet<Kategori> Kategori { get; set; }
 
         public DbSet<Kullanici> Kullanici { get; set; }
@@ -48,7 +49,6 @@ namespace ETicaret.Data.Orm.Configration
 
         public DbSet<SiparisDetay> SiparisDetay { get; set; }
 
-        public DbSet<Urun> Urun { get; set; }
-   
+        public DbSet<Urun> Urun { get; set; }   
     }
 }

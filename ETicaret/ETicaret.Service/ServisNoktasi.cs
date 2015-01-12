@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ETicaret.Service
 {
-    public class ServisNoktasi :IDisposable
+    public class ServisNoktasi : IDisposable
     {
         private ETicaretEntities _context;
 
@@ -19,10 +19,9 @@ namespace ETicaret.Service
 
         #region Tanımlama
 
-        private YoneticiServis _yoneticiService;
+        private YoneticiServis _yoneticiServis;
 
-        private KategoriServis _kategoriService;
-       
+        private KategoriServis _kategoriServis;
 
         #endregion
 
@@ -32,12 +31,11 @@ namespace ETicaret.Service
         {
             get
             {
-                if(_yoneticiService==null)
+                if (_yoneticiServis == null)
                 {
-                    _yoneticiService = new YoneticiServis(_context);
+                    _yoneticiServis = new YoneticiServis(_context);
                 }
-
-                return _yoneticiService;
+                return _yoneticiServis;
             }
         }
 
@@ -45,7 +43,7 @@ namespace ETicaret.Service
         {
             get
             {
-                return _kategoriService ?? (_kategoriService = new KategoriServis(_context));
+                return _kategoriServis ?? (_kategoriServis = new KategoriServis(_context));
             }
         }
 
@@ -55,11 +53,11 @@ namespace ETicaret.Service
 
         public virtual void Dispose(bool disposed)
         {
-           if(!disposed)
-           {
-               _context.Dispose();
-           }
-           _disposed = true;
+            if (!disposed)
+            {
+                _context.Dispose();
+            }
+            _disposed = true;
         }
 
         public void Dispose()

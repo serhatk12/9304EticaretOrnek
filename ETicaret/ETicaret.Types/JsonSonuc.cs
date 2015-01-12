@@ -15,7 +15,5 @@ namespace ETicaret.Types
         public bool BasariliMi { get; set; }
 
         public string CssClass { get; set; }
-
-
     }
 }

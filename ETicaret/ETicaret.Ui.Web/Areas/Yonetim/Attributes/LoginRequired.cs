@@ -12,12 +12,11 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Attributes
         {
             if (!HttpContext.Current.User.Identity.IsAuthenticated)
             {
-               filterContext.Controller.TempData["routeValues"]  = filterContext.RouteData.Values;
+                filterContext.Controller.TempData["routeValues"] = filterContext.RouteData.Values;
                 filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary
                 {
                     {"controller","giris"},
-                    {"action","index"},
-                    
+                    {"action","index"},                    
                 });
             }
         }
