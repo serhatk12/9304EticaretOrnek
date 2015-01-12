@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
+}
+@model IEnumerable<ETicaret.Data.Orm.Kategori>
+      <form method="post">
+          @Html.DropDownList("kategoriId", (IEnumerable<SelectListItem>)ViewData["kategoriListe"],"Üst Kategoriler", new { @class="form-control",@onchange="this.form.submit()"})
+      </form>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                          Ad
+                        </th>
+                        <th>
+                            Adres
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                       <tr class="subitem">
+                           <td>@item.Ad</td>
+                           <td><a href="/kategoriler/@item.SayfaYolu">@item.SayfaYolu</a></td>
+
+                           <td>
+
+                           </td>
+                       </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

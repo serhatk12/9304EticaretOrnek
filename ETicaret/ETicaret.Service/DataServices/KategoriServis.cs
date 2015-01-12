@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ETicaret.Extensions.StringExtensions;
+using ETicaret.Data.Dto;
 
 namespace ETicaret.Service.DataServices
 {
@@ -19,6 +20,28 @@ namespace ETicaret.Service.DataServices
 
         }
 
+        public List<KategoriDto> DtoGetir()
+        {
+            List<Kategori> kategoriListesi = base.HepsiniGetir();
+
+            List<KategoriDto> katList = kategoriListesi.
+                Where(x => x.UstKategori == null).Select(
+                x => new KategoriDto
+                {
+                    Ad = x.Ad,
+                    Id = x.Id,
+                    AltKategoriler = kategoriListesi.Where(z => z.UstKategori == x.Id).
+                    Select(z => new KategoriDto
+                    {
+                        Id = z.Id,
+                        Ad = z.Ad,
+                    }).ToList()
+                }
+                ).ToList();
+            return katList;
+
+        }
+
         public override IslemSonucu Ekle(Kategori entity)
         {
             if (Db.Kategori.Any(x => x.Ad == entity.Ad))
@@ -26,7 +49,10 @@ namespace ETicaret.Service.DataServices
                 return Hatali("Aynı isimde başka bir kategori mevcut");
             }
             entity.SayfaYolu = entity.Ad.ToClearString();
-            return base.Ekle(entity);
+            IslemSonucu sonuc = base.Ekle(entity);
+            sonuc.Kayit = sonuc.BasariliMi ? entity : null;
+            return sonuc;
+
         }
 
         public override IslemSonucu Duzenle(Kategori entity)
@@ -36,7 +62,7 @@ namespace ETicaret.Service.DataServices
                 return Hatali("Aynı isimde başka bir kategori mevcut");
             }
             Kategori kat = base.Bul(entity.Id);
-            if(kat ==null)
+            if (kat == null)
             {
                 return Hatali("Kategori tespit edilemedi");
             }
@@ -45,6 +71,7 @@ namespace ETicaret.Service.DataServices
             kat.Ad = entity.Ad;
             kat.UstKategori = entity.UstKategori;
             return base.Duzenle(kat);
+
         }
     }
 }

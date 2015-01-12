@@ -14,15 +14,18 @@ namespace ETicaret.Types
 
         public bool BasariliMi { get; set; }
 
+        public object Kayit { get; set; }
+
         public JsonSonuc JsonaCevir()
         {
-           return new JsonSonuc
-            {
-                BasariliMi = this.BasariliMi,
-                CssClass = this.BasariliMi?"alert alert-info":"alert alert-danger",
-                KayitId = this.KayitId,
-                Mesaj = this.Mesaj
-            };
+            return new JsonSonuc
+             {
+                 BasariliMi = this.BasariliMi,
+                 CssClass = this.BasariliMi ? "alert alert-info" : "alert alert-danger",
+                 KayitId = this.KayitId,
+                 Mesaj = this.Mesaj,
+                 Kayit = this.Kayit,
+             };
         }
     }
 }

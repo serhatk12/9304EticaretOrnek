@@ -18,6 +18,14 @@ namespace ETicaret.Service.DataServices.Base
         private IslemSonucu _basarili;
         private IslemSonucu _hatali;
 
+
+        public List<Tdto> SecilenleriGetir<Tdto>(Expression<Func<TEntity, Tdto>> selector)
+        {
+     
+            List<Tdto> model = _dbSet.Where(x => !x.SilindiMi).Select(selector).ToList();
+            return model;
+        }
+
         public ServiceBase(ETicaretEntities dbContext)
         {
             this.Db = dbContext;
@@ -47,6 +55,12 @@ namespace ETicaret.Service.DataServices.Base
 
 
         #region Return Types
+        public IslemSonucu Basarili(string mesaj, object kayit)
+        {
+            _basarili.Kayit = kayit;
+            _basarili.Mesaj = mesaj;
+            return _basarili;
+        }
 
         public IslemSonucu Basarili(string mesaj)
         {
@@ -81,10 +95,10 @@ namespace ETicaret.Service.DataServices.Base
         public virtual IslemSonucu Ekle(TEntity entity)
         {
             entity.EklenmeTarihi = DateTime.Now;
-            entity.SilindiMi = false;        
+            entity.SilindiMi = false;
             _dbSet.Add(entity);
             Db.SaveChanges();
-            return Basarili("Kayıt başarıyla eklenmiştir.",entity.Id);
+            return Basarili("Kayıt başarıyla eklenmiştir.", entity.Id);
         }
 
         public virtual IslemSonucu Duzenle(TEntity entity)

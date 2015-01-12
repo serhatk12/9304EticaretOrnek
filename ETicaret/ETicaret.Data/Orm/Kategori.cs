@@ -22,6 +22,7 @@ namespace ETicaret.Data.Orm
         public string Aciklama { get; set; }
 
         public string SayfaYolu { get; set; }
+
     }
 }
 

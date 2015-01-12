@@ -15,7 +15,6 @@ C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\bin\Debug\EntityFramework.xml
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\obj\Debug\ETicaret.Data.csprojResolveAssemblyReference.cache
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\obj\Debug\ETicaret.Data.dll
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\obj\Debug\ETicaret.Data.pdb
 C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\bin\Debug\ETicaret.Data.dll.config

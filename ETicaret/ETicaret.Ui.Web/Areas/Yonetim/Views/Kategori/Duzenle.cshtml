@@ -1,24 +1,26 @@
 ﻿@{
+    ViewBag.Title = "Duzenle";
     Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
 }
+
 @model ETicaret.Data.Orm.Kategori
-           
-       <div id="result" class="insertResult"></div>
+
+<div id="result"></div>
 
 <div class="row">
-  
+
     <div class="panel panel-default">
         <div class="panel-heading">
-            Kategori Ekle
+            @Model.Ad
         </div>
         <div class="panel-body">
-            @using (Html.BeginForm("Ekle", "Kategori", FormMethod.Post, new { @role = "form",@id="kategoriForm"}))
+            @using (Html.BeginForm("Duzenle", "Kategori", FormMethod.Post, new { @role = "form", @class="ajaxform" }))
             {
                 @Html.TextGroupFor(x => x.Ad)
                 @Html.TextAreaGroupFor(x => x.Aciklama)
                 @Html.DropDownGroupFor(x => x.UstKategori, "kategoriListe", "Yeni bir üst kategori oluşturmak istiyorum")
-                @Html.SubmitButton("Kaydet")
-            
+                @Html.SubmitButton("Düzenle")
+
             }
         </div>
 
@@ -26,5 +28,6 @@
 </div>
 @section scripts{
     @Scripts.Render("~/formScripts")
-    <script src="~/Scripts/Custom/YonetimKategori/KategoriForm.js"></script>
+   
 }
+

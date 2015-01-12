@@ -9,11 +9,9 @@ namespace ETicaret.Types
    public class JsonSonuc
     {
         public int KayitId { get; set; }
-
         public string Mesaj { get; set; }
-
         public bool BasariliMi { get; set; }
-
         public string CssClass { get; set; }
+        public object Kayit { get; set; }
     }
 }

@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Sirala";
+    Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
+}
+@model List<ETicaret.Data.Dto.KategoriDto>
+
+<ol>
+    @foreach (var item in Model)
+    {
+        <li>
+            @item.Ad
+            @if (item.AltKategoriler.Any())
+            {
+                <ol>
+                    @foreach(var altKategori in item.AltKategoriler)
+                    {
+                        <li>@altKategori.Ad</li>
+                    }
+                </ol>
+            }
+        </li>
+    }
+</ol>
+
+@section scripts{
+    <script src="~/Scripts/Plugins/sortable/jquery.sortable.js"></script>
+    <script>
+        $(function () {
+            var oldContainer
+            $("ol").sortable({
+                nested: true,
+                pullPlaceholder: false,
+                afterMove: function (placeholder, container) {
+                    if (oldContainer != container) {
+                        if (oldContainer)
+                            oldContainer.el.removeClass("active")
+                        container.el.addClass("active")
+
+                        oldContainer = container
+                    }
+                },
+                group: 'nested',
+                onDrop: function (item, container, supers) {
+                    container.el.removeClass("active")
+                }
+            });
+        })
+
+    </script>
+}
+@section styles
+{
+    <style>
+     body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol.example li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+ol.example li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
+    </style>
+}

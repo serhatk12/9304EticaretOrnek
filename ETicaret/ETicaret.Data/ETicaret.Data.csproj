@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\KategoriDto.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Orm\Configuration\ETicaretEntities.cs" />
     <Compile Include="Orm\Kategori.cs" />

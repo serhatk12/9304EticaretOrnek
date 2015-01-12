@@ -1,5 +1,4 @@
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Extensions\bin\Debug\ETicaret.Extensions.dll
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Extensions\bin\Debug\ETicaret.Extensions.pdb
-C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Extensions\obj\Debug\ETicaret.Extensions.csprojResolveAssemblyReference.cache
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Extensions\obj\Debug\ETicaret.Extensions.dll
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Extensions\obj\Debug\ETicaret.Extensions.pdb
