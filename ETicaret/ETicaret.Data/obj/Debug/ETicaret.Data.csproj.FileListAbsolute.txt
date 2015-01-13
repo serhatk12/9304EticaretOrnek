@@ -27,3 +27,4 @@ C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\bin\Debug\
 C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\obj\Debug\ETicaret.Data.csprojResolveAssemblyReference.cache
 C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\obj\Debug\ETicaret.Data.dll
 C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\obj\Debug\ETicaret.Data.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Data\obj\Debug\ETicaret.Data.csprojResolveAssemblyReference.cache

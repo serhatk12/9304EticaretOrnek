@@ -24,20 +24,26 @@ namespace ETicaret.Service.DataServices
         {
             List<Kategori> kategoriListesi = base.HepsiniGetir();
 
+            //Databaseden çekilmiyor kategoriListesinden geliyor.
             List<KategoriDto> katList = kategoriListesi.
                 Where(x => x.UstKategori == null).Select(
                 x => new KategoriDto
                 {
                     Ad = x.Ad,
                     Id = x.Id,
+                    SiraNo = x.SiraNumarasi,
                     AltKategoriler = kategoriListesi.Where(z => z.UstKategori == x.Id).
                     Select(z => new KategoriDto
                     {
                         Id = z.Id,
                         Ad = z.Ad,
+                        SiraNo = z.SiraNumarasi,
                     }).ToList()
                 }
                 ).ToList();
+
+
+
             return katList;
 
         }
@@ -72,6 +78,18 @@ namespace ETicaret.Service.DataServices
             kat.UstKategori = entity.UstKategori;
             return base.Duzenle(kat);
 
+        }
+
+        public IslemSonucu Sirala(int[] idler)
+        {
+            int sayac =0;
+            foreach (var item in idler)
+            {
+                Kategori kategori = Db.Kategori.Find(item);
+                kategori.SiraNumarasi = sayac++;
+                Db.SaveChanges();
+            }
+            return Basarili("Kategoriler başarıyla düzenlemiştir.");
         }
     }
 }

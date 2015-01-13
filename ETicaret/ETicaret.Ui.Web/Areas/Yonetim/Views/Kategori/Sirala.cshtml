@@ -4,70 +4,44 @@
 }
 @model List<ETicaret.Data.Dto.KategoriDto>
 
-<ol>
+
+<ul class="sortable">
     @foreach (var item in Model)
     {
-        <li>
-            @item.Ad
+        <li id="@item.Id" class="ui-state-default">
+            <img width="48" height="48" src="~/Content/images/moveactive.png" />  @item.Ad
             @if (item.AltKategoriler.Any())
             {
-                <ol>
-                    @foreach(var altKategori in item.AltKategoriler)
+                <ul class="subsortable">
+                    @foreach (var altKategori in item.AltKategoriler)
                     {
-                        <li>@altKategori.Ad</li>
+                        <li id="@altKategori.Id" class="ui-state-highlight">
+                            <img width="48" height="48" src="~/Content/images/moveactive.png" />
+                            @altKategori.Ad
+                        </li>
                     }
-                </ol>
+                </ul>
             }
         </li>
     }
-</ol>
-
+</ul>
+<div id="result"></div>
 @section scripts{
-    <script src="~/Scripts/Plugins/sortable/jquery.sortable.js"></script>
-    <script>
-        $(function () {
-            var oldContainer
-            $("ol").sortable({
-                nested: true,
-                pullPlaceholder: false,
-                afterMove: function (placeholder, container) {
-                    if (oldContainer != container) {
-                        if (oldContainer)
-                            oldContainer.el.removeClass("active")
-                        container.el.addClass("active")
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    @Scripts.Render("~/formScripts")
+    @Scripts.Render("~/jqueryUi")
+    @Scripts.Render("~/kategoriSiralaScripts")
 
-                        oldContainer = container
-                    }
-                },
-                group: 'nested',
-                onDrop: function (item, container, supers) {
-                    container.el.removeClass("active")
-                }
-            });
-        })
-
-    </script>
 }
 @section styles
-{
+{<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <style>
-     body.dragging, body.dragging * {
-  cursor: move !important;
-}
+        ul {
+            list-style: none;
+        }
 
-.dragged {
-  position: absolute;
-  opacity: 0.5;
-  z-index: 2000;
-}
-
-ol.example li.placeholder {
-  position: relative;
-  /** More li styles **/
-}
-ol.example li.placeholder:before {
-  position: absolute;
-  /** Define arrowhead **/
-}
+            ul li {
+                cursor: move;
+            }
     </style>
 }

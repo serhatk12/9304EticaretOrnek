@@ -43,12 +43,12 @@ namespace ETicaret.Service.DataServices.Base
 
         public virtual List<TEntity> HepsiniGetir()
         {
-            return _dbSet.Where(x => !x.SilindiMi).ToList();
+            return _dbSet.OrderBy(x=>x.SiraNumarasi).Where(x => !x.SilindiMi).ToList();
         }
 
         public virtual List<TEntity> HepsiniGetir(Expression<Func<TEntity, bool>> filter)
         {
-            return _dbSet.Where(x => !x.SilindiMi).Where(filter).ToList();
+            return _dbSet.OrderBy(x=>x.SiraNumarasi).Where(x => !x.SilindiMi).Where(filter).ToList();
         }
 
         #endregion
@@ -94,6 +94,8 @@ namespace ETicaret.Service.DataServices.Base
 
         public virtual IslemSonucu Ekle(TEntity entity)
         {
+            entity.SiraNumarasi = entity.SiraNumarasi == 0 ? 9999 : entity.SiraNumarasi;
+
             entity.EklenmeTarihi = DateTime.Now;
             entity.SilindiMi = false;
             _dbSet.Add(entity);

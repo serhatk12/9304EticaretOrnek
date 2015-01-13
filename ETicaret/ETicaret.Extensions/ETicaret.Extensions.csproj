@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HtmlHelpers\AdminSide\FormHelpers\FormHelpers.cs" />
+    <Compile Include="HtmlHelpers\AdminSide\ListHelpers\ListHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensions\StringEx.cs" />
   </ItemGroup>

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 {
@@ -66,6 +67,14 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
             return JSonuc(sonuc);
         }
 
+        [HttpPost]
+        public JsonResult SiraDuzenle(string[] item)
+        {
+            int[] ids = item.ToList().Select(x => Convert.ToInt32(x)).ToArray();
+
+            var result = Servis.Kategori.Sirala(ids);
+            return JSonuc(result);
+        }
 
         void KategoriListesiYukle()
         {

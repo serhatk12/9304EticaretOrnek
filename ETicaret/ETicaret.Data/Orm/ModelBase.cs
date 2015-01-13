@@ -19,5 +19,7 @@ namespace ETicaret.Data.Orm
         public DateTime? SonGuncelleme { get; set; }
 
         public DateTime? SilinmeTarihi { get; set; }
+
+        public int SiraNumarasi { get; set; }
     }
 }

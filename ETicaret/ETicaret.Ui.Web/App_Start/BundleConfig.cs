@@ -10,6 +10,7 @@ namespace ETicaret.Ui.Web.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            BundleTable.EnableOptimizations = false;
             bundles.Add(new ScriptBundle("~/adminLayoutScripts")
                 .Include(
                 "~/Scripts/Plugins/Jquery/jquery-2.1.3.min.js",
@@ -23,7 +24,7 @@ namespace ETicaret.Ui.Web.App_Start
                 "~/Scripts/Plugins/Jquery/jquery.validate.min.js",
                 "~/Scripts/Plugins/Jquery/jquery.validate.unobtrusive.min.js",
                 "~/Scripts/Plugins/Jquery/jquery.form.min.js"
-                ,"~/Scripts/Custom/FormIslemleri.js"
+                , "~/Scripts/Custom/FormIslemleri.js"
                 ));
 
             bundles.Add(new StyleBundle("~/adminLayoutStyles")
@@ -31,10 +32,18 @@ namespace ETicaret.Ui.Web.App_Start
                 "~/Content/css/bootstrap.min.css",
                 "~/Content/css/plugins/metisMenu.min.css",
                 "~/Content/css/sb-admin-2.css",
-                "~/Content/font-awesome-4.1.0/css/font-awesome.min.css"                
+                "~/Content/font-awesome-4.1.0/css/font-awesome.min.css"
                 ));
 
-            BundleTable.EnableOptimizations = false;
+
+            bundles.Add(new ScriptBundle("~/kategoriSiralaScripts")
+                .Include("~/Scripts/Custom/YonetimKategori/SiralamaIslemleri.js")
+                );
+
+          
+            
+
+      
         }
     }
 }

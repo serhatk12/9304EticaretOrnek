@@ -13,6 +13,8 @@ namespace ETicaret.Data.Dto
 
         public string Ad { get; set; }
 
+        public int SiraNo { get; set; }
+
         public List<KategoriDto> AltKategoriler { get; set; }
     }
 }

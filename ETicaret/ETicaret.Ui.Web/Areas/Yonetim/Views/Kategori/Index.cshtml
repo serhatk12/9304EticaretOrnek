@@ -10,28 +10,33 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>
-                          Ad
+                            Ad
                         </th>
                         <th>
                             Adres
                         </th>
+                        <th>
+                            &nbsp;
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(var item in Model)
+                    @foreach (var item in Model)
                     {
-                       <tr class="subitem">
-                           <td>@item.Ad</td>
-                           <td><a href="/kategoriler/@item.SayfaYolu">@item.SayfaYolu</a></td>
+                        <tr class="subitem" id='tableRow-@item.Id'>
+                            <td>@item.Ad</td>
+                            <td><a href="/kategoriler/@item.SayfaYolu">@item.SayfaYolu</a></td>
 
-                           <td>
+                            <td class="text-center">
+                                @Html.UpdateButton("/yonetim/kategori/Duzenle/" + item.Id)
+                                @Html.DeleteButton("/yonetim/kategori/Sil", item.Id)
 
-                           </td>
-                       </tr>
+                            </td>
+                        </tr>
                     }
                 </tbody>
             </table>
@@ -39,3 +44,6 @@
     </div>
 </div>
 
+@section scripts{
+<script src="~/Scripts/Custom/ListeIslemleri.js"></script>
+}
