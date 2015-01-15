@@ -19,5 +19,32 @@ namespace ETicaret.Data.Orm
 
         [ForeignKey("UrunId")]
         public virtual Urun Urun { get; set; }
+
+        [NotMapped]
+        public string Resim140
+        {
+            get
+            {
+                return "/Content/images/urunler/140/" + this.KucukYol;
+            }
+        }
+
+        [NotMapped]
+        public string Resim300
+        {
+            get
+            {
+                return "/Content/images/urunler/300/" + this.OrtaYol;
+            }
+        }
+
+        [NotMapped]
+        public string ResimOrjinal
+        {
+            get
+            {
+                return "/Content/images/urunler/orjinal/" + this.BuyukYol;
+            }
+        }
     }
 }

@@ -92,3 +92,5 @@ C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\obj\Debu
 C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\obj\Debug\ETicaret.Ui.Web.pdb
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Extensions.dll
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Extensions.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\FileUploader.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\FileUploader.pdb

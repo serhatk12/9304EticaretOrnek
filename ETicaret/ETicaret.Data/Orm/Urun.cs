@@ -11,13 +11,19 @@ namespace ETicaret.Data.Orm
     public class Urun : ModelBase
     {
         [Required(ErrorMessage = "Ürün adı boş geçilemez.")]
-        [Display(Name = "Ürün Adı")]
+        [Display(Name = "Urun Adı")]
         public string Ad { get; set; }
 
-        [Display(Name = "Ürün Açıklaması")]
+
+        [Display(Name = "Kategori seçiniz")]
+        [Range(1, int.MaxValue, ErrorMessage = "Kategori boş geçilemez")]
+        public int KategoriId { get; set; }
+
+
+        [Display(Name = "Urun Acıklaması")]
         public string Aciklama { get; set; }
 
-        [Display(Name = "Ürün Net Fiyatı")]
+        [Display(Name = "Urun Net Fiyatı")]
         public Decimal Fiyat { get; set; }
 
         [Display(Name = "İndirim %")]
@@ -47,6 +53,11 @@ namespace ETicaret.Data.Orm
             }
         }
 
+     
+
         public virtual List<Resim> Resimler { get; set; }
+
+        [ForeignKey("KategoriId")]
+        public virtual Kategori Kategori { get; set; }
     }
 }

@@ -23,6 +23,8 @@ namespace ETicaret.Data.Orm
 
         public string SayfaYolu { get; set; }
 
+
+        public virtual List<Urun> Urunler { get; set; }
     }
 }
 

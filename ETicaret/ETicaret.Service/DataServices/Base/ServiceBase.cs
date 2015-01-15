@@ -19,13 +19,7 @@ namespace ETicaret.Service.DataServices.Base
         private IslemSonucu _hatali;
 
 
-        public List<Tdto> SecilenleriGetir<Tdto>(Expression<Func<TEntity, Tdto>> selector)
-        {
-     
-            List<Tdto> model = _dbSet.Where(x => !x.SilindiMi).Select(selector).ToList();
-            return model;
-        }
-
+    
         public ServiceBase(ETicaretEntities dbContext)
         {
             this.Db = dbContext;
@@ -50,6 +44,15 @@ namespace ETicaret.Service.DataServices.Base
         {
             return _dbSet.OrderBy(x=>x.SiraNumarasi).Where(x => !x.SilindiMi).Where(filter).ToList();
         }
+
+
+        public List<Tdto> SecilenleriGetir<Tdto>(Expression<Func<TEntity, Tdto>> selector)
+        {
+
+            List<Tdto> model = _dbSet.OrderBy(x=>x.SiraNumarasi).Where(x => !x.SilindiMi).Select(selector).ToList();
+            return model;
+        }
+
 
         #endregion
 

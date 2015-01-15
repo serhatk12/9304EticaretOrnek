@@ -124,6 +124,8 @@
     <Content Include="Areas\Yonetim\Views\Kategori\Sirala.cshtml" />
     <Content Include="Areas\Yonetim\Views\Kategori\Duzenle.cshtml" />
     <Content Include="Areas\Yonetim\Views\Kategori\Index.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Urun\Ekle.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Urun\Sirala.cshtml" />
     <None Include="Scripts\Plugins\Jquery\jquery-2.1.3-vsdoc.js" />
     <Content Include="Scripts\Custom\FormIslemleri.js" />
     <Content Include="Scripts\Custom\ListeIslemleri.js" />
@@ -157,6 +159,7 @@
     <Compile Include="Areas\Yonetim\Controllers\BaseController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\GirisController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\KategoriController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\UrunController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\YoneticiAnasayfaController.cs" />
     <Compile Include="Areas\Yonetim\Models\GirisModel.cs" />
     <Compile Include="Areas\Yonetim\YonetimAreaRegistration.cs" />
@@ -206,6 +209,7 @@
     <Content Include="Content\font-awesome-4.1.0\scss\_stacked.scss" />
     <Content Include="Content\font-awesome-4.1.0\scss\_variables.scss" />
     <Content Include="Scripts\Plugins\Jquery\jquery-2.1.3.min.map" />
+    <Content Include="Views\Deneme\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -217,6 +221,10 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Yonetim\Views\AdminHome\" />
     <Folder Include="Areas\Yonetim\Views\Base\" />
+    <Folder Include="Content\images\urunler\140\" />
+    <Folder Include="Content\images\urunler\300\" />
+    <Folder Include="Content\images\urunler\orjinal\" />
+    <Folder Include="Content\thumbdeneme\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +243,10 @@
     <ProjectReference Include="..\ETicaret.Types\ETicaret.Type.csproj">
       <Project>{ee792949-26ab-4863-b4ed-0247d326daa1}</Project>
       <Name>ETicaret.Type</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileUploader\FileUploader.csproj">
+      <Project>{64aec029-3e1b-4dd9-9e07-cf06d73ed3d9}</Project>
+      <Name>FileUploader</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

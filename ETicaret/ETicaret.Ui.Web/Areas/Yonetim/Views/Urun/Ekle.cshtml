@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
+}
+@model ETicaret.Data.Orm.Urun
+<div id="result" class="insertResult"></div>
+
+<div class="row">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Urun Ekle
+        </div>
+    
+        <div class="panel-body">
+            @using (Html.BeginForm("Ekle", "Urun", FormMethod.Post, new { @role = "form", @class = "ajaxform", @id = "urunForm", @enctype = "multipart/form-data" }))
+            {
+                @Html.TextGroupFor(x => x.Ad)
+                @Html.TextAreaGroupFor(x => x.Aciklama)
+                <div class="form-group">
+                    <label>Kategori Seçiniz</label>
+                    <input type="text" id="selectCategory" class="form-control" />
+                    @Html.HiddenFor(x=>x.KategoriId)
+                   <p class="help-block">@Html.ValidationMessageFor(x => x.KategoriId)</p>
+                </div>
+                @Html.TextGroupFor(x => x.Fiyat)
+                @Html.TextGroupFor(x => x.IndirimYuzde)
+                @Html.TextGroupFor(x => x.StokMiktar)
+                <div class="form-group">
+                    <label> Resim Seçiniz</label>
+                    <input type="file" name="resimler" multiple />
+                </div>
+                
+                @Html.SubmitButton("Kaydet")
+
+            }
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/formScripts")
+
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+        $.widget("custom.catcomplete", $.ui.autocomplete, {
+            _create: function () {
+                this._super();
+                this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+            },
+            _renderMenu: function (ul, items) {
+                var that = this,
+                  currentCategory = "";
+                $.each(items, function (index, item) {
+                    var li;
+                    if (item.category != currentCategory) {
+                        ul.append("<li class='ui-autocomplete-category'>" + item.category + "</li>");
+                        currentCategory = item.category;
+                    }
+                    li = that._renderItemData(ul, item);
+                    if (item.category) {
+                        li.attr("aria-label", item.category + " : " + item.label);
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+
+
+
+        $(document).ready(function () {
+            $.get('/Yonetim/Urun/GetCategory', function (response) {
+                console.log(response);
+                $("#selectCategory").catcomplete({
+                    delay: 0,
+                    source: response,
+                    select:function(eventi,ui)
+                    {
+                        $('#KategoriId').val(ui.item.Id);
+                    }
+                });
+            });
+
+        });
+    </script>
+}
+@section styles{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <style>
+        .ui-autocomplete-category {
+            font-weight: bold;
+            padding: .2em .4em;
+            margin: .8em 0 .2em;
+            line-height: 1.5;
+        }
+    </style>
+}

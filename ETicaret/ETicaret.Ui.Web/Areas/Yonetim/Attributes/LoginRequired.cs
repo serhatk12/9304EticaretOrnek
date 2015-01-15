@@ -12,6 +12,7 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Attributes
         {
             if (!HttpContext.Current.User.Identity.IsAuthenticated)
             {
+                var da = filterContext.RouteData.Values;
                 filterContext.Controller.TempData["routeValues"] = filterContext.RouteData.Values;
                 filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary
                 {

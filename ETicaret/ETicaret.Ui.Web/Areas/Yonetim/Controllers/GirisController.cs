@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.Security;
 namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 {
@@ -14,10 +15,10 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
     {
         public ActionResult Index()
         {
-            if(HttpContext.User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Index", "YoneticiAnasayfa");
-            }
+            //if(HttpContext.User.Identity.IsAuthenticated)
+            //{
+            //    return RedirectToAction("Index", "YoneticiAnasayfa");
+            //}
             // TempData Actionlar arası veri taşımak için kullanıbilir.
             var routeValues = TempData["routeValues"];
             TempData["yonlendirmeDegerleri"] = routeValues;
@@ -46,7 +47,13 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
                     var routeValues = TempData["yonlendirmeDegerleri"];
                     if(routeValues!=null)
                     {
-                        return RedirectToRoute(routeValues);
+                        RouteValueDictionary values = (RouteValueDictionary)routeValues;
+                        string action = values["action"].ToString();
+                        string controller = values["controller"].ToString();
+                        return RedirectToAction(action,controller,values);
+                     
+                    
+
                     }
                     return RedirectToAction("Index", "YoneticiAnasayfa");
                 }

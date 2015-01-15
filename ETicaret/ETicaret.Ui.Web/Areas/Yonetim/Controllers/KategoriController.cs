@@ -16,6 +16,7 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 
         public ViewResult Index()
         {
+            
             KategoriListesiYukle();
             List<Kategori> model = Servis.Kategori.HepsiniGetir(x=>x.UstKategori==null);
             return View(model);

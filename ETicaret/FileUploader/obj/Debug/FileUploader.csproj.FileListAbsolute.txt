@@ -1,0 +1,5 @@
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\FileUploader\obj\Debug\FileUploader.csprojResolveAssemblyReference.cache
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\FileUploader\bin\Debug\FileUploader.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\FileUploader\bin\Debug\FileUploader.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\FileUploader\obj\Debug\FileUploader.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\FileUploader\obj\Debug\FileUploader.pdb

@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Sirala";
+    Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
+}
+@model List<ETicaret.Data.Orm.Urun>
+<ul id="sortable">
+    @foreach (var item in Model)
+    {
+        <li>
+            <img src="@item.Resimler.FirstOrDefault().Resim140" />
+            <p class="text-muted">@item.Ad</p>
+        </li>
+    }
+
+</ul>
+@section scripts{
+    @Scripts.Render("~/formScripts")
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $("#sortable").sortable({ placeholder: 'ui-state-highlight' });
+            $("#sortable").disableSelection();
+        });
+    </script>
+}
+@section styles{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <style>
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 600px;
+        }
+
+            #sortable li {
+                margin: 3px 3px 3px 0;
+                padding: 1px;
+                float: left;
+                width: 200px;
+                height: 220px;
+                font-size: 2em;
+                text-align: center;
+            }
+    </style>
+}

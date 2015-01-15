@@ -23,6 +23,10 @@ namespace ETicaret.Service
 
         private KategoriServis _kategoriServis;
 
+        private UrunService _urunServis;
+
+        private ResimServis _resimServis;
+
         #endregion
 
         #region Oluşturma
@@ -44,6 +48,23 @@ namespace ETicaret.Service
             get
             {
                 return _kategoriServis ?? (_kategoriServis = new KategoriServis(_context));
+            }
+        }
+
+
+        public ResimServis Resim
+        {
+            get
+            {
+                return _resimServis ?? (_resimServis = new ResimServis(_context));
+            }
+        }
+
+        public UrunService Urun
+        {
+            get
+            {
+                return _urunServis ?? (_urunServis = new UrunService(_context));
             }
         }
 
