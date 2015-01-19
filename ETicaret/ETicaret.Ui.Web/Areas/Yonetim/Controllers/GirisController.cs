@@ -50,18 +50,18 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
                         RouteValueDictionary values = (RouteValueDictionary)routeValues;
                         string action = values["action"].ToString();
                         string controller = values["controller"].ToString();
-                        return RedirectToAction(action,controller,values);
-                     
-                    
-
+                        return RedirectToAction(action,controller,values);                   
                     }
                     return RedirectToAction("Index", "YoneticiAnasayfa");
-                }
-            
-                return View();
-               
-            }
+                }            
+                return View();               
+            }            
+        }
 
+        public ActionResult CikisYap()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
         }
     }
 }

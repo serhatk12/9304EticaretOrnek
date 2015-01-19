@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+@using ETicaret.Ui.Web.Models
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="Yonetim/Giris/CikisYap">Çıkış Yap (@CurrentUser.KullaniciAdi)</a>
             </div>         
            @{
                Html.RenderPartial("Partial/_sideBar");
