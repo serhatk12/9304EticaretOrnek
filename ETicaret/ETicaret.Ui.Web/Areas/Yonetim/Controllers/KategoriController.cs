@@ -91,6 +91,13 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
         }
 
 
+        public JsonResult Sil(int id)
+        {
+            var result = Servis.Kategori.Sil(id);
+            return JSonuc(result);
+        }
+
+
 
     }
 }

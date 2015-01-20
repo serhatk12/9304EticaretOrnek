@@ -16,5 +16,7 @@ namespace ETicaret.Data.Dto
         public int SiraNo { get; set; }
 
         public List<KategoriDto> AltKategoriler { get; set; }
+
+        public string Sayfayolu { get; set; }
     }
 }

@@ -15,18 +15,15 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 
         public ViewResult Index()
         {
-
-            return View();
+            List<Urun> model = Servis.Urun.HepsiniGetir();
+            return View(model);
         }
-
-
 
         public ViewResult Ekle()
         {
 
             return View();
         }
-
 
         [HttpPost]
         public JsonResult Ekle(HttpPostedFileBase[] resimler, Urun model)
@@ -66,23 +63,19 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
             return JSonuc(cevap);
         }
 
-
-
         public JsonResult GetCategory()
         {
             List<KategoriDto> kategoriList = Servis.Kategori.DtoGetir();
-            List<KategoriAutoComplate> autoComplate = new List<KategoriAutoComplate>();            
-            foreach(var item in kategoriList)
+            List<KategoriAutoComplate> autoComplate = new List<KategoriAutoComplate>();
+            foreach (var item in kategoriList)
             {
-              foreach(var subitem in item.AltKategoriler)
-              {
-                  autoComplate.Add(new KategoriAutoComplate {Id = subitem.Id, label = subitem.Ad, category = item.Ad });
-              }
+                foreach (var subitem in item.AltKategoriler)
+                {
+                    autoComplate.Add(new KategoriAutoComplate { Id = subitem.Id, label = subitem.Ad, category = item.Ad });
+                }
             }
-            return Json(autoComplate,JsonRequestBehavior.AllowGet);
+            return Json(autoComplate, JsonRequestBehavior.AllowGet);
         }
-
-
 
         public ViewResult Sirala()
         {
@@ -90,7 +83,21 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public JsonResult SiralamaYap(int[] ids)
+        {
+            var result = Servis.Urun.Sirala(ids);
+            return JSonuc(result);
+        }
+
+        public JsonResult Sil(int id)
+        {
+            var result = Servis.Urun.Sil(id);
+
+            return JSonuc(result);
+        }
+
     }
 
- 
+
 }

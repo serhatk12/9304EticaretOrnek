@@ -41,7 +41,7 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
                         ModelState.AddModelError("HataliGiris", sonuc.Mesaj);
                         return View();
                     }
-                    string userInfo = String.Format("{0};{1}",yonetici.Id,yonetici.KullaniciAdi);
+                    string userInfo = String.Format("admin;{0};{1}",yonetici.Id,yonetici.KullaniciAdi);
                     FormsAuthentication.SetAuthCookie(userInfo, true);
 
                     var routeValues = TempData["yonlendirmeDegerleri"];

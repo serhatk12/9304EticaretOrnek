@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ETicaret.Ui.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Attributes
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            if (CurrentUser.IsAdmin)
             {
                 var da = filterContext.RouteData.Values;
                 filterContext.Controller.TempData["routeValues"] = filterContext.RouteData.Values;

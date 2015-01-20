@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
+}
+
+@model IEnumerable<ETicaret.Data.Orm.Urun>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Ad
+                        </th>
+                        <th>
+                            Kalan Miktar
+                        </th>
+                        <th>Fiyat</th>
+                      
+                        <th>
+                            Satış Fiyatı
+                        </th>
+                        <th>Adres</th>
+                        <th>
+                            &nbsp;
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="subitem" id='tableRow-@item.Id'>
+
+                            <td>@item.Ad</td>
+                            <td>@item.StokMiktar</td>
+                            <td>@item.Fiyat</td>
+                            <td>@item.SonFiyat (-%@item.IndirimYuzde)</td>              
+                            <td><a href="/kategoriler/@item.SayfaYolu">@item.SayfaYolu</a></td>
+
+                            <td class="text-center">
+                                @Html.UpdateButton("/yonetim/Urun/Duzenle/" + item.Id)
+                                @Html.DeleteButton("/yonetim/Urun/Sil", item.Id)
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/Custom/ListeIslemleri.js"></script>
+}
+

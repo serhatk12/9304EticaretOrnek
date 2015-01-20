@@ -18,6 +18,22 @@ namespace ETicaret.Service.DataServices
 
         }
 
+        public  IslemSonucu GirisYap(Kullanici model)
+        {
+            Kullanici loginned = Db.Kullanici.FirstOrDefault(x => x.Eposta == model.Eposta && x.Sifre == model.Sifre && !x.SilindiMi);
+
+            if(loginned==null)
+            {
+                return Hatali("Kullanıcı adı veya şifre bulunamadı.");
+
+            }
+            model.Id = loginned.Id;
+            model.Ad = loginned.Ad;
+            model.Soyad = loginned.Soyad;
+            return Basarili("");
+            
+        }
+
         public override IslemSonucu Ekle(Kullanici entity)
         {
             if (Db.Kullanici.Any(x => x.Eposta == entity.Eposta))

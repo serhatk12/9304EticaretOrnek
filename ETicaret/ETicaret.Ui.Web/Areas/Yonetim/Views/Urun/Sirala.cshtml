@@ -3,22 +3,54 @@
     Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
 }
 @model List<ETicaret.Data.Orm.Urun>
-<ul id="sortable">
-    @foreach (var item in Model)
-    {
-        <li>
-            <img src="@item.Resimler.FirstOrDefault().Resim140" />
-            <p class="text-muted">@item.Ad</p>
-        </li>
-    }
+<div id="result"></div>
+<div class="row">
 
-</ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="panel-heading">
+                <h2>Ürün Sırala</h2>
+            </div>
+            <ul id="sortable">
+                @foreach (var item in Model)
+                {
+                    <li id="@item.Id">
+                        <img src="@item.Resimler.FirstOrDefault().Resim140" />
+                        <p class="text-muted">@item.Ad</p>
+                    </li>
+                }
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 @section scripts{
     @Scripts.Render("~/formScripts")
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
     <script>
         $(function () {
-            $("#sortable").sortable({ placeholder: 'ui-state-highlight' });
+            $("#sortable").sortable(
+                {
+                    placeholder: 'ui-state-highlight',
+                    update: function (event, ui) {
+                        var sortedUl = ui.item.parent();
+                        var sortedList = sortedUl.sortable("toArray");
+
+                        $.ajax({
+                            url: '/Yonetim/Urun/SiralamaYap',
+                            method: 'POST',
+                            data: { 'ids': sortedList },
+                            success: function (response) {
+                                setResponse(response);
+                            }
+                        });
+                    }
+                });
             $("#sortable").disableSelection();
         });
     </script>

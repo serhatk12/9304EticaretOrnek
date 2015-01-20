@@ -11,7 +11,7 @@ namespace ETicaret.Ui.Web.Models
         {
             get
             {          
-                return Convert.ToInt32(HttpContext.Current.User.Identity.Name.Split(';')[0]);
+                return Convert.ToInt32(HttpContext.Current.User.Identity.Name.Split(';')[1]);
             }
         }
 
@@ -19,7 +19,23 @@ namespace ETicaret.Ui.Web.Models
         {
             get
             {
-                return HttpContext.Current.User.Identity.Name.Split(';')[1];
+                return HttpContext.Current.User.Identity.Name.Split(';')[2];
+            }
+        }
+
+        public static bool OturumAcikMi
+        {
+            get
+            {
+                return HttpContext.Current.User.Identity.IsAuthenticated;
+            }
+        }
+
+        public static bool IsAdmin
+        {
+            get
+            {
+                return CurrentUser.OturumAcikMi ? HttpContext.Current.User.Identity.Name.Split(';')[0] == "admin" : false; 
             }
         }
     }

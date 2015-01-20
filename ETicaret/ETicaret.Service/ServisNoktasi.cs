@@ -27,9 +27,24 @@ namespace ETicaret.Service
 
         private ResimServis _resimServis;
 
+        private KullaniciServis _kullaniciServis;
+
         #endregion
 
         #region Oluşturma
+
+
+        public KullaniciServis Kullanici
+        {
+            get
+            {
+                if(_kullaniciServis==null)
+                {
+                    _kullaniciServis = new KullaniciServis(_context);
+                }
+                return _kullaniciServis;
+            }
+        }
 
         public YoneticiServis Yonetici
         {

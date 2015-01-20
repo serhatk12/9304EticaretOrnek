@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Dto\KategoriAutoComplate.cs" />
     <Compile Include="Dto\KategoriDto.cs" />
+    <Compile Include="Dto\SepetDto.cs" />
+    <Compile Include="Dto\SepetDetayDto.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Orm\Configuration\ETicaretEntities.cs" />
     <Compile Include="Orm\Kategori.cs" />

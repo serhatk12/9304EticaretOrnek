@@ -1,0 +1,47 @@
+﻿@model List<ETicaret.Data.Orm.Urun>
+@{
+    int counter = 0;
+}
+<div id="intro">
+    <div id="intro_wrap">
+        <div id="product_intro" class="container_12">
+            <div id="product_intro_info" class="grid_5">
+                @foreach (var item in Model)
+                {
+                  
+                    <div style="position: relative; @String.Format("{0}", counter++ != 0 ? "display:none" : "")">
+                        <h2><a href="/urundetay/@item.SayfaYolu">@item.Ad</a></h2>
+                        <div class="s_rating_holder">
+                            <p class="s_rating s_rating_big s_rating_5"> <span style="width: 60%;" class="s_percent"></span> </p>
+                           
+                        </div>
+                        <p class="s_desc">@item.Aciklama</p>
+                        <div class="s_price_holder">
+                            <p class="s_price"> <span class="s_currency s_before">₺</span>@item.SonFiyat </p>
+                        </div>
+                    </div>
+                }
+               
+           
+            </div>
+            <div id="product_intro_preview">
+                <div class="slides_container">
+                    @{
+                        counter = 0;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <div class="slideItem" style="@String.Format("{0}", counter++ != 0 ? "display:none" : "")"><a href="/urundetay/@item.SayfaYolu"><img src="@item.Resimler.Select(z=>z.Resim300).FirstOrDefault()" alt="" /></a></div>
+                    }
+                   
+                   
+                </div>
+                <a class="s_button_prev" href="javascript:;"></a>
+                <a class="s_button_next" href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/Scripts/front/jquery/jquery.slides.js"></script>
+<script type="text/javascript" src="/Scripts/front/shoppica.products_slide.js"></script>
+
