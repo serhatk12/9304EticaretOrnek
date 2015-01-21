@@ -14,7 +14,7 @@ namespace ETicaret.Data.Orm
 
         public bool SilindiMi { get; set; }
 
-        public DateTime EklenmeTarihi{get; set;}
+        public DateTime EklenmeTarihi { get; set; }
 
         public DateTime? SonGuncelleme { get; set; }
 

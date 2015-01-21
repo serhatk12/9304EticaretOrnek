@@ -49,6 +49,6 @@ namespace ETicaret.Data.Orm.Configration
 
         public DbSet<SiparisDetay> SiparisDetay { get; set; }
 
-        public DbSet<Urun> Urun { get; set; }   
+        public DbSet<Urun> Urun { get; set; }
     }
 }

@@ -18,8 +18,6 @@ namespace ETicaret.Service.DataServices.Base
         private IslemSonucu _basarili;
         private IslemSonucu _hatali;
 
-
-    
         public ServiceBase(ETicaretEntities dbContext)
         {
             this.Db = dbContext;
@@ -37,43 +35,41 @@ namespace ETicaret.Service.DataServices.Base
 
         public virtual List<TEntity> HepsiniGetir()
         {
-            return _dbSet.OrderBy(x=>x.SiraNumarasi).Where(x => !x.SilindiMi).ToList();
+            return _dbSet.OrderBy(x => x.SiraNumarasi).Where(x => !x.SilindiMi).ToList();
         }
 
         public virtual List<TEntity> HepsiniGetir(Expression<Func<TEntity, bool>> filter)
         {
-            return _dbSet.OrderBy(x=>x.SiraNumarasi).Where(x => !x.SilindiMi).Where(filter).ToList();
+            return _dbSet.OrderBy(x => x.SiraNumarasi).Where(x => !x.SilindiMi).Where(filter).ToList();
         }
-
 
         public List<Tdto> SecilenleriGetir<Tdto>(Expression<Func<TEntity, Tdto>> selector)
         {
-
-            List<Tdto> model = _dbSet.OrderBy(x=>x.SiraNumarasi).Where(x => !x.SilindiMi).Select(selector).ToList();
+            List<Tdto> model = _dbSet.OrderBy(x => x.SiraNumarasi).Where(x => !x.SilindiMi).Select(selector).ToList();
             return model;
         }
 
-
         #endregion
 
-
         #region Return Types
-        public IslemSonucu Basarili(string mesaj, object kayit)
-        {
-            _basarili.Kayit = kayit;
-            _basarili.Mesaj = mesaj;
-            return _basarili;
-        }
 
         public IslemSonucu Basarili(string mesaj)
         {
             _basarili.Mesaj = mesaj;
             return _basarili;
         }
+
         public IslemSonucu Basarili(string mesaj, int kayitId)
         {
             _basarili.Mesaj = mesaj;
             _basarili.KayitId = kayitId;
+            return _basarili;
+        }
+
+        public IslemSonucu Basarili(string mesaj, object kayit)
+        {
+            _basarili.Mesaj = mesaj;
+            _basarili.Kayit = kayit;
             return _basarili;
         }
 
@@ -92,13 +88,11 @@ namespace ETicaret.Service.DataServices.Base
 
         #endregion
 
-
         #region Insert-Update-Delete
 
         public virtual IslemSonucu Ekle(TEntity entity)
         {
             entity.SiraNumarasi = entity.SiraNumarasi == 0 ? 9999 : entity.SiraNumarasi;
-
             entity.EklenmeTarihi = DateTime.Now;
             entity.SilindiMi = false;
             _dbSet.Add(entity);

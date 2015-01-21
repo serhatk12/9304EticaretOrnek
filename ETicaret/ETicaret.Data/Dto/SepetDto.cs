@@ -8,10 +8,8 @@ namespace ETicaret.Data.Dto
 {
     public class SepetDto
     {
-
         public Decimal ToplamTutar { get; set; }
 
         public List<SepetDetayDto> SepetIcerik { get; set; }
-
     }
 }

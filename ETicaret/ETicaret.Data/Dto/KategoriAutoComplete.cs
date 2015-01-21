@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace ETicaret.Data.Dto
 {
-    public class KategoriAutoComplate
+    public class KategoriAutoComplete
     {
-
         public int Id { get; set; }
 
-        public string label { get; set; }
+        public string Label { get; set; }
 
-        public string category { get; set; }
-
+        public string Category { get; set; }
     }
 }

@@ -10,8 +10,8 @@ namespace ETicaret.Data.Orm
 {
     public class Yonetici : ModelBase
     {
-        [Required(ErrorMessage="Kullanıcı adı boş geçilemez")]
-        [Display(Name="Kullanıcı Adı")]
+        [Required(ErrorMessage = "Kullanıcı adı boş geçilemez")]
+        [Display(Name = "Kullanıcı Adı")]
         public string KullaniciAdi { get; set; }
 
         [Required(ErrorMessage = "İsim boş geçilemez")]
@@ -22,13 +22,13 @@ namespace ETicaret.Data.Orm
         [Display(Name = "Soyisim")]
         public string Soyad { get; set; }
 
-        [Required(ErrorMessage="Şifre boş geçilemez")]
-        [Display(Name="Şifre")]
-        [MinLength(6,ErrorMessage="Şifre en az 6 karakter olmalı")]
+        [Required(ErrorMessage = "Şifre boş geçilemez")]
+        [Display(Name = "Şifre")]
+        [MinLength(6, ErrorMessage = "Şifre en az 6 karakter olmalı")]
         public string Sifre { get; set; }
 
-        [Compare("Sifre",ErrorMessage="Şifreler aynı değil.")]
-        [Display(Name="Şifre (Tekrar)")]
+        [Compare("Sifre", ErrorMessage = "Şifreler aynı değil.")]
+        [Display(Name = "Şifre (Tekrar)")]
         [NotMapped]
         public string SifreTekrar { get; set; }
     }

@@ -11,9 +11,9 @@ using ETicaret.Types;
 using ETicaret.Data.Dto;
 namespace ETicaret.Service.DataServices
 {
-    public class UrunService : ServiceBase<Urun>
+    public class UrunServis : ServiceBase<Urun>
     {
-        public UrunService(ETicaretEntities context) : base(context) { }
+        public UrunServis(ETicaretEntities context) : base(context) { }
 
         public override IslemSonucu Ekle(Urun entity)
         {
@@ -21,12 +21,9 @@ namespace ETicaret.Service.DataServices
             {
                 return Hatali("Aynı isimde başka bir ürün bulunuyor");
             }
-
             entity.SayfaYolu = entity.Ad.ToClearString();
-
             return base.Ekle(entity);
         }
-
 
         public IslemSonucu Sirala(int[] ids)
         {
@@ -39,15 +36,12 @@ namespace ETicaret.Service.DataServices
             return Basarili("Ürünler sıralandı");
         }
 
-
         public SepetDto SepetGetir(List<SepetDetayDto> sepet)
         {
             Decimal toplamTutar = 0;
-
             foreach (var item in sepet)
             {
                 Urun urn = Db.Urun.FirstOrDefault(x => x.Id == item.UrunId);
-
                 item.BirimFiyat = urn.SonFiyat;
                 item.UrunAdi = urn.Ad;
                 toplamTutar += (item.BirimFiyat * item.Adet);
@@ -57,8 +51,6 @@ namespace ETicaret.Service.DataServices
                 ToplamTutar = toplamTutar,
                 SepetIcerik = sepet,
             };
-
         }
-
     }
 }

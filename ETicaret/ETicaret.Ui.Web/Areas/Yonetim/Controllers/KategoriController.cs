@@ -31,7 +31,7 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
         }
         public ViewResult Sirala()
         {
-            List<KategoriDto> model = Servis.Kategori.DtoGetir();
+            List<KategoriDto> model = Servis.Kategori.UstKategoriListesiDtoGetir();
 
             //TODO Siralamayı düzelt
             return View(model);

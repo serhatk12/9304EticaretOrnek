@@ -8,7 +8,6 @@ namespace ETicaret.Data.Dto
 {
     public class SepetDetayDto
     {
-
         public string UrunAdi { get; set; }
 
         public int UrunId { get; set; }

@@ -23,7 +23,7 @@ namespace ETicaret.Service
 
         private KategoriServis _kategoriServis;
 
-        private UrunService _urunServis;
+        private UrunServis _urunServis;
 
         private ResimServis _resimServis;
 
@@ -33,12 +33,11 @@ namespace ETicaret.Service
 
         #region Oluşturma
 
-
         public KullaniciServis Kullanici
         {
             get
             {
-                if(_kullaniciServis==null)
+                if (_kullaniciServis == null)
                 {
                     _kullaniciServis = new KullaniciServis(_context);
                 }
@@ -75,11 +74,11 @@ namespace ETicaret.Service
             }
         }
 
-        public UrunService Urun
+        public UrunServis Urun
         {
             get
             {
-                return _urunServis ?? (_urunServis = new UrunService(_context));
+                return _urunServis ?? (_urunServis = new UrunServis(_context));
             }
         }
 

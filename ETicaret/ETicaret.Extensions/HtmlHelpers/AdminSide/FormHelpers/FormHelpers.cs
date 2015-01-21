@@ -55,7 +55,7 @@ namespace ETicaret.Extensions.HtmlHelpers.AdminSide.FormHelpers
             return new MvcHtmlString(builder.ToString(TagRenderMode.Normal));
         }
 
-        public static MvcHtmlString SubmitButton(this HtmlHelper helper,string value)
+        public static MvcHtmlString SubmitButton(this HtmlHelper helper, string value)
         {
             TagBuilder builder = new TagBuilder("button");
             builder.AddCssClass("btn btn-info");

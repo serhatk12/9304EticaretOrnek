@@ -14,7 +14,7 @@ namespace ETicaret.Data.Orm
 
         public int AdresId { get; set; }
 
-        [Display(Name="Eklemek istedikleriniz")]
+        [Display(Name = "Eklemek istedikleriniz")]
         public string Aciklama { get; set; }
 
         [ForeignKey("KullaniciId")]

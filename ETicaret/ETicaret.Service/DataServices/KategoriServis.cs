@@ -20,12 +20,12 @@ namespace ETicaret.Service.DataServices
 
         }
 
-        public List<KategoriDto> DtoGetir()
+        public List<KategoriDto> UstKategoriListesiDtoGetir()
         {
             List<Kategori> kategoriListesi = base.HepsiniGetir();
 
             //Databaseden çekilmiyor kategoriListesinden geliyor.
-            List<KategoriDto> katList = kategoriListesi.
+            List<KategoriDto> ustKategoriListesi = kategoriListesi.
                 Where(x => x.UstKategori == null).Select(
                 x => new KategoriDto
                 {
@@ -39,13 +39,8 @@ namespace ETicaret.Service.DataServices
                         Ad = z.Ad,
                         SiraNo = z.SiraNumarasi,
                     }).ToList()
-                }
-                ).ToList();
-
-
-
-            return katList;
-
+                }).ToList();
+            return ustKategoriListesi;
         }
 
         public override IslemSonucu Ekle(Kategori entity)
@@ -58,7 +53,6 @@ namespace ETicaret.Service.DataServices
             IslemSonucu sonuc = base.Ekle(entity);
             sonuc.Kayit = sonuc.BasariliMi ? entity : null;
             return sonuc;
-
         }
 
         public override IslemSonucu Duzenle(Kategori entity)
@@ -77,12 +71,11 @@ namespace ETicaret.Service.DataServices
             kat.Ad = entity.Ad;
             kat.UstKategori = entity.UstKategori;
             return base.Duzenle(kat);
-
         }
 
         public IslemSonucu Sirala(int[] idler)
         {
-            int sayac =0;
+            int sayac = 0;
             foreach (var item in idler)
             {
                 Kategori kategori = Db.Kategori.Find(item);

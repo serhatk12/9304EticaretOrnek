@@ -8,7 +8,6 @@ namespace ETicaret.Data.Dto
 {
     public class KategoriDto
     {
-
         public int Id { get; set; }
 
         public string Ad { get; set; }

@@ -65,13 +65,13 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 
         public JsonResult GetCategory()
         {
-            List<KategoriDto> kategoriList = Servis.Kategori.DtoGetir();
-            List<KategoriAutoComplate> autoComplate = new List<KategoriAutoComplate>();
+            List<KategoriDto> kategoriList = Servis.Kategori.UstKategoriListesiDtoGetir();
+            List<KategoriAutoComplete> autoComplate = new List<KategoriAutoComplete>();
             foreach (var item in kategoriList)
             {
                 foreach (var subitem in item.AltKategoriler)
                 {
-                    autoComplate.Add(new KategoriAutoComplate { Id = subitem.Id, label = subitem.Ad, category = item.Ad });
+                    autoComplate.Add(new KategoriAutoComplete { Id = subitem.Id, Label = subitem.Ad, Category = item.Ad });
                 }
             }
             return Json(autoComplate, JsonRequestBehavior.AllowGet);

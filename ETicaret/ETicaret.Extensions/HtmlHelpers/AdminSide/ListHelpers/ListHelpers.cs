@@ -9,14 +9,13 @@ namespace ETicaret.Extensions.HtmlHelpers.AdminSide.ListHelpers
 {
     public static class ListHelpers
     {
-
         public static MvcHtmlString DeleteButton(this HtmlHelper helper, string deleteAdress, int id)
         {
-            if(deleteAdress.EndsWith(id.ToString()) || deleteAdress.EndsWith(id.ToString()+"/"))
+            if (deleteAdress.EndsWith(id.ToString()) || deleteAdress.EndsWith(id.ToString() + "/"))
             {
                 throw new ArgumentException("Delete Adress cannot ends with recordId");
             }
-            if(!deleteAdress.EndsWith("/"))
+            if (!deleteAdress.EndsWith("/"))
             {
                 deleteAdress += "/";
             }
@@ -27,7 +26,7 @@ namespace ETicaret.Extensions.HtmlHelpers.AdminSide.ListHelpers
             return new MvcHtmlString(builder.ToString(TagRenderMode.Normal));
         }
 
-        public static MvcHtmlString UpdateButton(this HtmlHelper helper,string updateAdress)
+        public static MvcHtmlString UpdateButton(this HtmlHelper helper, string updateAdress)
         {
             TagBuilder builder = new TagBuilder("a");
             builder.AddCssClass("btn btn-circle btn-info");
@@ -35,6 +34,5 @@ namespace ETicaret.Extensions.HtmlHelpers.AdminSide.ListHelpers
             builder.InnerHtml = "<i class='fa fa-pencil-square-o'></i>";
             return new MvcHtmlString(builder.ToString(TagRenderMode.Normal));
         }
-
     }
 }

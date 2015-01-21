@@ -13,10 +13,10 @@ namespace ETicaret.Data.Orm
         [Display(Name = "Marka Adı")]
         public string Ad { get; set; }
 
-        [Display(Name="Marka Açıklaması")]
+        [Display(Name = "Marka Açıklaması")]
         public string Aciklama { get; set; }
 
-        [Display(Name="Resim Seçiniz")]
+        [Display(Name = "Resim Seçiniz")]
         public string ResimYolu { get; set; }
 
         public string SayfaYolu { get; set; }

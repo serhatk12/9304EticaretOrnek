@@ -12,7 +12,5 @@ namespace ETicaret.Service.DataServices
     public class ResimServis : ServiceBase<Resim>
     {
         public ResimServis(ETicaretEntities context) : base(context) { }
-
-
     }
 }

@@ -34,11 +34,11 @@ namespace ETicaret.Data.Orm
         public string Soyad { get; set; }
 
         [Phone(ErrorMessage = "Lütfen geçerli bir telefon numarası giriniz.")]
-        [Required(ErrorMessage="Telefon numarası boş geçilemez.")]
-        [Display(Name="Telefon numaranız")]
+        [Required(ErrorMessage = "Telefon numarası boş geçilemez.")]
+        [Display(Name = "Telefon numaranız")]
         public string Telefon { get; set; }
 
-        public virtual List<KullaniciAdres>  Adresler { get; set; }
+        public virtual List<KullaniciAdres> Adresler { get; set; }
 
         public virtual List<Siparis> Siparisler { get; set; }
     }

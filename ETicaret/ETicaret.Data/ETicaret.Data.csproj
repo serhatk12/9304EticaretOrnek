@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dto\KategoriAutoComplate.cs" />
+    <Compile Include="Dto\KategoriAutoComplete.cs" />
     <Compile Include="Dto\KategoriDto.cs" />
     <Compile Include="Dto\SepetDto.cs" />
     <Compile Include="Dto\SepetDetayDto.cs" />

@@ -14,11 +14,9 @@ namespace ETicaret.Data.Orm
         [Display(Name = "Urun Adı")]
         public string Ad { get; set; }
 
-
         [Display(Name = "Kategori seçiniz")]
         [Range(1, int.MaxValue, ErrorMessage = "Kategori boş geçilemez")]
         public int KategoriId { get; set; }
-
 
         [Display(Name = "Urun Acıklaması")]
         public string Aciklama { get; set; }
@@ -52,8 +50,6 @@ namespace ETicaret.Data.Orm
                 return IndirimYuzde != 0;
             }
         }
-
-     
 
         public virtual List<Resim> Resimler { get; set; }
 

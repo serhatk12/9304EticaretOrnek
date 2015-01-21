@@ -43,7 +43,7 @@ namespace ETicaret.Service.DataServices
         {
             if (Db.Yonetici.Any(x => x.KullaniciAdi == entity.KullaniciAdi && entity.Id != x.Id))
             {
-                return Hatali("Kullanıcı adı mevcuttur.");
+                return Hatali("Aynı kullanıcı adına sahip başka bir yönetici var.");
             }
             Yonetici yonetici = Bul(entity.Id);
             yonetici.KullaniciAdi = entity.KullaniciAdi;

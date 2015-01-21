@@ -6,23 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ETicaret.Data.Orm
-{   
+{
     public class Kategori : ModelBase
     {
         //Kullanıcıya görünecek değer
-        [Display(Name="Üst Kategori")]
+        [Display(Name = "Üst Kategori")]
         public int? UstKategori { get; set; }
 
-        [Required(ErrorMessage="Kategori adı boş geçilemez.")]
-        [Display(Name="Kategori Adı")]
+        [Required(ErrorMessage = "Kategori adı boş geçilemez.")]
+        [Display(Name = "Kategori Adı")]
         public string Ad { get; set; }
 
         //HACK 'Ç' harfini desteklemiyor
-        [Display(Name="Kategori Acıklaması")]
+        [Display(Name = "Kategori Acıklaması")]
         public string Aciklama { get; set; }
 
         public string SayfaYolu { get; set; }
-
 
         public virtual List<Urun> Urunler { get; set; }
     }
