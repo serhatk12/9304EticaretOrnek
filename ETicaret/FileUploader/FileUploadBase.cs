@@ -5,7 +5,7 @@ using FileUploader.Types;
 
 namespace FileUploader
 {
-    public class FileUploadBase :IDisposable
+    public class FileUploadBase : IDisposable
     {
         protected HttpPostedFileBase PostedFile { get; private set; }
 
@@ -13,16 +13,15 @@ namespace FileUploader
 
         protected string Path { get; private set; }
 
-        protected string PhyscalPath { get; private set; }
+        protected string PhysicalPath { get; private set; }
 
         public FileUploadBase(HttpPostedFileBase postedFile, string path)
         {
             this.PostedFile = postedFile;
             this.FileExtension = System.IO.Path.GetExtension(postedFile.FileName);
             this.Path = path;
-            this.PhyscalPath = HttpContext.Current.Server.MapPath(path);
+            this.PhysicalPath = HttpContext.Current.Server.MapPath(path);
         }
-
 
         public virtual FileUploadResult UploadFile()
         {
@@ -32,16 +31,15 @@ namespace FileUploader
         public virtual FileUploadResult UploadFile(string fileName)
         {
             string newName = "";
-            string fullpath = SetUniqFileName(fileName, out newName);
-            PostedFile.SaveAs(fullpath);
+            string fullPath = SetUniqFileName(fileName, out newName);
+            PostedFile.SaveAs(fullPath);
             return new FileUploadResult
             {
                 FileName = newName,
                 Status = true,
-                FileLenght = PostedFile.ContentLength,
+                FileSize = PostedFile.ContentLength,
             };
         }
-
 
         private string SetUniqFileName(string fileName, out string newName)
         {
@@ -52,22 +50,18 @@ namespace FileUploader
             {
                 if (counter == 0)
                 {
-                    fullPath = PhyscalPath + "\\" + fileName + FileExtension;
+                    fullPath = PhysicalPath + "\\" + fileName + FileExtension;
                 }
                 else
                 {
-                    fullPath = PhyscalPath + "\\" + fileName + "-" + counter + FileExtension;
+                    fullPath = PhysicalPath + "\\" + fileName + "-" + counter + FileExtension;
                     refName = fileName + "-" + counter + FileExtension;
-
                 }
-
                 counter++;
             } while (File.Exists(fullPath));
             newName = refName;
             return fullPath;
-
         }
-
 
         public void Dispose()
         {

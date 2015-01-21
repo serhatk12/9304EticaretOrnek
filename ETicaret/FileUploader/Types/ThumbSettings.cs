@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileUploader.Types
 {
-    public class ThumbSettings 
+    public class ThumbSettings
     {
         public string OldFilePath { get; set; }
 

@@ -18,28 +18,25 @@ namespace FileUploader
             allowedExtensions = new List<string> { ".png", ".jpg", ".jpeg", ".bmp", ".gif" };
         }
 
-
-        public override Types.FileUploadResult UploadFile(string fileName)
+        public override FileUploadResult UploadFile(string fileName)
         {
             if (!allowedExtensions.Contains(base.FileExtension))
             {
-                return new Types.FileUploadResult
+                return new FileUploadResult
                 {
                     FileName = null,
                     Status = false,
                     Message = "Bu içeriğe izin verilmiyor",
                 };
             }
-
             return base.UploadFile(fileName);
         }
-
 
         // Hack framework için düzelt
         public string CreateThumb(ThumbSettings settings)
         {
-            string oldfileName = HttpContext.Current.Server.MapPath(settings.OldFilePath);
-            Image img = Image.FromFile(oldfileName);
+            string oldFileName = HttpContext.Current.Server.MapPath(settings.OldFilePath);
+            Image img = Image.FromFile(oldFileName);
             Bitmap bmp = new Bitmap(width: settings.NewWidth, height: settings.NewHeight);
             using (Graphics gr = Graphics.FromImage((Image)bmp))
             {
@@ -52,16 +49,12 @@ namespace FileUploader
                 string fileExtension = System.IO.Path.GetExtension(fileNameWithExtensions);
                 string pureFileName = fileNameWithExtensions.Replace(fileExtension, "");
                 string savedFileName = pureFileName + settings.NewWidth + "x" + settings.NewHeight + FileExtension;
-                string saveAdress = HttpContext.Current.Server.MapPath(settings.NewFilePath+"/"+savedFileName);
-                bmp.Save(saveAdress,System.Drawing.Imaging.ImageFormat.Png);
+                string saveAddress = HttpContext.Current.Server.MapPath(settings.NewFilePath + "/" + savedFileName);
+
+                bmp.Save(saveAddress, System.Drawing.Imaging.ImageFormat.Png);
                 img.Dispose();
                 return savedFileName;
-         
             }
-
         }
-
-
-
     }
 }
