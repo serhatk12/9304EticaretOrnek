@@ -7,16 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
+using System.Web.Script.Serialization; //???
 
 namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 {
     public class KategoriController : BaseController
     {
-
         public ViewResult Index()
-        {
-            
+        {            
             KategoriListesiYukle();
             List<Kategori> model = Servis.Kategori.HepsiniGetir(x=>x.UstKategori==null);
             return View(model);
@@ -29,6 +27,7 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
             List<Kategori> model = Servis.Kategori.HepsiniGetir(x => x.UstKategori == kategoriId);
             return View(model);
         }
+
         public ViewResult Sirala()
         {
             List<KategoriDto> model = Servis.Kategori.UstKategoriListesiDtoGetir();
@@ -43,16 +42,12 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
             return View();
         }
 
-
         [HttpPost, ValidRequired]
         public JsonResult Ekle(Kategori model)
         {
-
             IslemSonucu sonuc = Servis.Kategori.Ekle(model);
             return JSonuc(sonuc);
-
         }
-
 
         public ViewResult Duzenle(int id)
         {
@@ -72,7 +67,6 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
         public JsonResult SiraDuzenle(string[] item)
         {
             int[] ids = item.ToList().Select(x => Convert.ToInt32(x)).ToArray();
-
             var result = Servis.Kategori.Sirala(ids);
             return JSonuc(result);
         }
@@ -86,18 +80,12 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
                     Value = x.Id.ToString(),
                 });
             var model = Servis.Kategori.HepsiniGetir();
-
-
         }
-
 
         public JsonResult Sil(int id)
         {
             var result = Servis.Kategori.Sil(id);
             return JSonuc(result);
         }
-
-
-
     }
 }

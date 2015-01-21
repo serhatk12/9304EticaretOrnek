@@ -12,7 +12,6 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 {
     public class UrunController : BaseController
     {
-
         public ViewResult Index()
         {
             List<Urun> model = Servis.Urun.HepsiniGetir();
@@ -21,7 +20,6 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Controllers
 
         public ViewResult Ekle()
         {
-
             return View();
         }
 

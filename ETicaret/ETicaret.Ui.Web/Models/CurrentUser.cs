@@ -10,7 +10,7 @@ namespace ETicaret.Ui.Web.Models
         public static int Id
         {
             get
-            {          
+            {
                 return Convert.ToInt32(HttpContext.Current.User.Identity.Name.Split(';')[1]);
             }
         }
@@ -35,7 +35,7 @@ namespace ETicaret.Ui.Web.Models
         {
             get
             {
-                return CurrentUser.OturumAcikMi ? HttpContext.Current.User.Identity.Name.Split(';')[0] == "admin" : false; 
+                return CurrentUser.OturumAcikMi ? HttpContext.Current.User.Identity.Name.Split(';')[0] == "admin" : false;
             }
         }
     }

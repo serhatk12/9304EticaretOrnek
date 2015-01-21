@@ -8,12 +8,9 @@ namespace ETicaret.Ui.Web.Models
 {
     public class MusteriLogin
     {
-
-
         [Required(ErrorMessage = "Eposta boş geçilemez.")]
-        [EmailAddress(ErrorMessage="Lütfen uygun bir e-posta adresi giriniz.")]
+        [EmailAddress(ErrorMessage = "Lütfen geçerli bir e-posta adresi giriniz.")]
         public string EPosta { get; set; }
-
 
         [Required(ErrorMessage = "Şifre boş geçilemez")]
         public string Sifre { get; set; }

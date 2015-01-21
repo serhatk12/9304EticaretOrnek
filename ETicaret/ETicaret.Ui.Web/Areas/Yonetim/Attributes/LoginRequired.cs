@@ -11,9 +11,9 @@ namespace ETicaret.Ui.Web.Areas.Yonetim.Attributes
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (CurrentUser.IsAdmin)
+            if (!CurrentUser.IsAdmin)
             {
-                var da = filterContext.RouteData.Values;
+                var da = filterContext.RouteData.Values; //???
                 filterContext.Controller.TempData["routeValues"] = filterContext.RouteData.Values;
                 filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary
                 {

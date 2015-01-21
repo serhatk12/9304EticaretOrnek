@@ -14,7 +14,6 @@ namespace ETicaret.Ui.Web.Areas.Yonetim
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-
             context.MapRoute(
                 "Yonetim_default",
                 "Yonetim/{controller}/{action}/{id}",

@@ -11,11 +11,12 @@ namespace ETicaret.Ui.Web.Attributes
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if(!filterContext.Controller.ViewData.ModelState.IsValid)
+            if (!filterContext.Controller.ViewData.ModelState.IsValid)
             {
-                IslemSonucu  sonuc = new IslemSonucu{
+                IslemSonucu sonuc = new IslemSonucu
+                {
                     BasariliMi = false,
-                    Mesaj ="Girmiş olduğunuz değerler uygun değildir. Sayfayı yenileyip tekrar deneyin.",
+                    Mesaj = "Girmiş olduğunuz değerler uygun değildir. Sayfayı yenileyip tekrar deneyin.",
                 };
                 filterContext.Result = new JsonResult()
                 {

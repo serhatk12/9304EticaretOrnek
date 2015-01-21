@@ -19,31 +19,23 @@ namespace ETicaret.Ui.Web.App_Start
                 "~/Scripts/Theme/sb-admin-2.js"
                 ));
 
-            bundles.Add(new ScriptBundle("~/formScripts")
-                .Include(
+            bundles.Add(new ScriptBundle("~/formScripts").Include(
                 "~/Scripts/Plugins/Jquery/jquery.validate.min.js",
                 "~/Scripts/Plugins/Jquery/jquery.validate.unobtrusive.min.js",
                 "~/Scripts/Plugins/Jquery/jquery.form.min.js"
                 , "~/Scripts/Custom/FormIslemleri.js"
                 ));
 
-            bundles.Add(new StyleBundle("~/adminLayoutStyles")
-                .Include(
+            bundles.Add(new StyleBundle("~/adminLayoutStyles").Include(
                 "~/Content/css/bootstrap.min.css",
                 "~/Content/css/plugins/metisMenu.min.css",
                 "~/Content/css/sb-admin-2.css",
                 "~/Content/font-awesome-4.1.0/css/font-awesome.min.css"
                 ));
 
-
             bundles.Add(new ScriptBundle("~/kategoriSiralaScripts")
                 .Include("~/Scripts/Custom/YonetimKategori/SiralamaIslemleri.js")
-                );
-
-          
-            
-
-      
+                );       
         }
     }
 }

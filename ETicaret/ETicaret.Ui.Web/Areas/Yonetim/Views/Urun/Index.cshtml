@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
 }
@@ -18,12 +17,15 @@
                         <th>
                             Kalan Miktar
                         </th>
-                        <th>Fiyat</th>
-                      
+                        <th>
+                            Fiyat
+                        </th>
                         <th>
                             Satış Fiyatı
                         </th>
-                        <th>Adres</th>
+                        <th>
+                            Adres
+                        </th>
                         <th>
                             &nbsp;
                         </th>
@@ -33,17 +35,24 @@
                     @foreach (var item in Model)
                     {
                         <tr class="subitem" id='tableRow-@item.Id'>
-
-                            <td>@item.Ad</td>
-                            <td>@item.StokMiktar</td>
-                            <td>@item.Fiyat</td>
-                            <td>@item.SonFiyat (-%@item.IndirimYuzde)</td>              
-                            <td><a href="/kategoriler/@item.SayfaYolu">@item.SayfaYolu</a></td>
-
+                            <td>
+                                @item.Ad
+                            </td>
+                            <td>
+                                @item.StokMiktar
+                            </td>
+                            <td>
+                                @item.Fiyat
+                            </td>
+                            <td>
+                                @item.SonFiyat (-%@item.IndirimYuzde)
+                            </td>
+                            <td>
+                                <a href="/kategoriler/@item.SayfaYolu">@item.SayfaYolu</a>
+                            </td>
                             <td class="text-center">
                                 @Html.UpdateButton("/yonetim/Urun/Duzenle/" + item.Id)
                                 @Html.DeleteButton("/yonetim/Urun/Sil", item.Id)
-
                             </td>
                         </tr>
                     }
