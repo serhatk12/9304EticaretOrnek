@@ -376,6 +376,7 @@
     <Content Include="Scripts\Custom\FormIslemleri.js" />
     <Content Include="Scripts\Custom\ListeIslemleri.js" />
     <Content Include="Scripts\Custom\Sepet\Sepet.js" />
+    <Content Include="Scripts\Custom\UrunDetay.js" />
     <Content Include="Scripts\Custom\YonetimKategori\KategoriForm.js" />
     <Content Include="Scripts\Custom\YonetimKategori\SiralamaIslemleri.js" />
     <Content Include="Scripts\Front\jquery\colorpicker\colorpicker.js" />
@@ -405,6 +406,7 @@
     <Content Include="Scripts\Plugins\morris\morris-data.js" />
     <Content Include="Scripts\Plugins\morris\morris.min.js" />
     <Content Include="Scripts\Plugins\morris\raphael.min.js" />
+    <Content Include="Scripts\Plugins\notify.min.js" />
     <Content Include="Scripts\Theme\sb-admin-2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -423,11 +425,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SiteUrunController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CurrentUser.cs" />
     <Compile Include="Models\MusteriLogin.cs" />
+    <Compile Include="Models\UrunDetayModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -478,6 +482,7 @@
     <Content Include="Views\Shared\Partial\_navigationNoLogin.cshtml" />
     <Content Include="Views\Shared\Partial\_navigationWithLogin.cshtml" />
     <Content Include="Views\Shared\Partial\_sepet.cshtml" />
+    <Content Include="Views\SiteUrun\UrunDetay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

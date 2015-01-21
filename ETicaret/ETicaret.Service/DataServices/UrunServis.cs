@@ -42,15 +42,25 @@ namespace ETicaret.Service.DataServices
             foreach (var item in sepet)
             {
                 Urun urn = Db.Urun.FirstOrDefault(x => x.Id == item.UrunId);
-                item.BirimFiyat = urn.SonFiyat;
-                item.UrunAdi = urn.Ad;
-                toplamTutar += (item.BirimFiyat * item.Adet);
+               
+                    item.BirimFiyat = (urn.SonFiyat * item.Adet);
+                    item.UrunAdi = urn.Ad;
+                   
+                    toplamTutar += (item.BirimFiyat);
+                
+                
             }
             return new SepetDto
             {
                 ToplamTutar = toplamTutar,
                 SepetIcerik = sepet,
             };
+        }
+
+        public Urun SayfaYolunaGoreGetir(string sayfaYolu)
+        {
+            Urun urn = Db.Urun.FirstOrDefault(x => x.SayfaYolu == sayfaYolu);
+            return urn;
         }
     }
 }

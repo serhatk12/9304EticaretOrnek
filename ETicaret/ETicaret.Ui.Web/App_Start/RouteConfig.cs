@@ -13,6 +13,8 @@ namespace ETicaret.Ui.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("urunDetayi", "urundetay/{pageSlug}", new {@controller="SiteUrun",action="UrunDetay"});
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

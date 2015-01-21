@@ -1,10 +1,42 @@
-﻿<div id="cart_menu" class="s_nav">
+﻿@model ETicaret.Data.Dto.SepetDto
+           <style>
+               #sepet{
+                    border:1px solid green;
+               }
+            
+           </style>
+<div id="cart_menu" class="s_nav">
     <a href="#">
-    <span class="s_icon"></span> 
-    <small class="s_text">Sepetim</small>
-    <span id="total_price" class="s_grand_total s_main_color">₺0.00</span></a>
+        <span class="s_icon"></span>
+        <small class="s_text">Sepetim</small>
+        <span id="total_price" class="s_grand_total s_main_color">@Model.ToplamTutar</span>
+    </a>
 
     <div class="s_submenu s_cart_holder" id="cart_detail">
-        <p class="s_mb_0">0 items</p>
+        <table id="sepet">
+            <thead>
+                <tr>
+                    <th>Adet</th>
+                    <th>Adı</th>
+                    <th>Tutar</th>
+                </tr>
+             
+            </thead>
+            <tbody id="sepet_detaylari">
+                @foreach (var item in Model.SepetIcerik)
+                {
+                   <tr>
+                       <td>@item.Adet</td>
+                       <td>@item.UrunAdi</td>
+                       <td>₺ @item.BirimFiyat</td>
+                           </tr>
+                }
+            </tbody>
+        </table>
+        @*@foreach (var item in Model.SepetIcerik)
+        {
+            <p class="s_mb_0">@item.Adet @item.UrunAdi @item.BirimFiyat</p>
+        }*@
+
     </div>
 </div>

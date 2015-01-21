@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "UrunDetay";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@model ETicaret.Ui.Web.Models.UrunDetayModel
+<link href="~/Content/front/css/prettyPhoto.css" rel="stylesheet" />
+
+<script src="~/Scripts/Front/jquery/jquery.prettyPhoto.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $(".s_tabs").tabs({ fx: { opacity: 'toggle', duration: 300 } });
+
+        $("#product_images a[rel^='prettyPhoto'], #product_gallery a[rel^='prettyPhoto']").prettyPhoto({
+            theme: 'light_square',
+            opacity: 0.5
+        });
+
+    });
+
+</script>
+<div id="content" class="product_view container_12">
+
+    <div id="product" class="grid_12">
+        <div id="product_images" class="grid_4 alpha">
+            <a id="product_image_preview" rel="prettyPhoto[gallery]" href="@Model.Urun.Resimler.FirstOrDefault().ResimOrjinal">
+                <img id="image" src="@Model.Urun.Resimler.FirstOrDefault().Resim300" title="Leica M7" alt="Leica M7" />
+            </a>
+        </div>
+     
+        <div id="product_info" class="grid_4">
+            <p class="s_price s_promo_price">
+                @if (Model.Urun.IndirimVarMi)
+                {
+                    <span class="s_old_price">
+                        @Model.Urun.Fiyat
+                    <span class="s_currency s_after"> ₺</span>
+                </span>
+                }
+                @Model.Urun.Fiyat
+                <span class="s_currency s_after"> ₺</span>
+            </p>
+            <dl class="clearfix">
+                <dt>Stok Miktarı</dt>
+                <dd>@Model.Urun.StokMiktar</dd>
+                <dt>Adı</dt>
+                <dd>@Model.Urun.Ad</dd>
+
+            </dl>
+            <p class="s_short_desc">
+                @Model.Urun.Aciklama
+            </p>
+            <div id="product_share" class="clearfix">
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style ">
+                    <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                    <a class="addthis_button_tweet"></a>
+                    <a class="addthis_counter addthis_pill_style"></a>
+                </div>
+              
+                <!-- AddThis Button END -->
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="grid_4 omega">
+
+           
+            <div id="product_buy" class="clearfix">
+                <form method="post" action="/SiteUrun/SepeteEkle" id="frmSepeteEkle">
+                    <input type="hidden" value="@Model.Urun.Id" id="urunId"/>
+                    <label for="product_buy_quantity">Adet:</label>                
+                    <input id="adet" type="text" size="2" />
+                    <a id="add_to_cart" href="javascript:$('#frmSepeteEkle').trigger('submit');" class="s_main_color_bgr"><span class="s_text"><span class="s_icon"></span> Sepete Ekle</span></a>
+                </form>
+                
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="s_tabs grid_12 alpha omega">
+            <ul class="s_tabs_nav clearfix">
+                <li><a href="#product_description">Açıklama</a></li>
+
+                <li><a href="#product_gallery">Resimler</a></li>
+            </ul>
+            <div class="s_tab_box">
+
+                <div id="product_description">
+                    <div class="cpt_product_description ">
+                        @Model.Urun.Aciklama
+                    </div>
+                    <!-- cpt_container_end -->
+                </div>
+
+                <div id="product_gallery">
+                    <ul class="s_thumbs clearfix">
+                        @foreach (var item in Model.Urun.Resimler)
+                        {
+                            <li>
+                                <a class="s_thumb" href="@item.Resim300" title="@item.Id" rel="prettyPhoto[gallery]">
+                                    <img src="@item.Resim140" width="120" title="@item.Id" alt="Leica M7" />
+                                </a>
+                            </li>
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @{
+            ViewBag.Message1 = "Benzer";
+            ViewBag.Message2 = "Ürünler";
+        }
+                @Html.Partial("~/Views/Home/Partial/urunGrid.cshtml", Model.BenzerUrunler)
+      
+        <div id="product_tags" class="grid_12 alpha omega">
+            <h2 class="s_title_1"><span class="s_main_color">Product</span> Tags</h2>
+            <div class="clear"></div>
+            <ul class="clearfix">
+                <li><a href="#">Centrino</a></li>
+                <li><a href="#">Intel</a></li>
+                <li><a href="#">VAIO</a></li>
+                <li><a href="#">laptop</a></li>
+                <li><a href="#">notebook</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+<script src="~/Scripts/Custom/UrunDetay.js"></script>

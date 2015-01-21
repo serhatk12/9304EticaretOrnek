@@ -59,7 +59,15 @@ namespace ETicaret.Ui.Web.Controllers
 
         public PartialViewResult Sepet()
         {
-            return PartialView("Partial/_sepet");
+            HttpCookie cartCookie = Request.Cookies["cart"];
+            SepetDto dto = new SepetDto();
+            dto.SepetIcerik = new List<SepetDetayDto>();
+            if(cartCookie!=null)
+            {
+                dto = new JavaScriptSerializer().Deserialize<SepetDto>(cartCookie.Value);
+            }
+
+            return PartialView("Partial/_sepet",dto);
         }
 
         [HttpPost]
@@ -81,11 +89,20 @@ namespace ETicaret.Ui.Web.Controllers
                 {
                     sepet.SepetIcerik = new List<SepetDetayDto>();
                 }
-                sepet.SepetIcerik.Add(model);
+                if (sepet.SepetIcerik.Any(x => x.UrunId == model.UrunId))
+                {
+                    var item = sepet.SepetIcerik.FirstOrDefault(x => x.UrunId == model.UrunId);
+                    item.Adet += model.Adet;
+                }
+                else
+                {
+                    sepet.SepetIcerik.Add(model);
+                }
+
                 returnSepet = Servis.Urun.SepetGetir(sepet.SepetIcerik);
                 string sepetJson = js.Serialize(returnSepet);
                 cartCookie.Value = sepetJson;
-              
+
             }
             else
             {
@@ -94,7 +111,7 @@ namespace ETicaret.Ui.Web.Controllers
                 returnSepet = Servis.Urun.SepetGetir(sepetDetayi);
                 string sepetJson = js.Serialize(returnSepet);
                 cartCookie.Value = sepetJson;
-                            
+
             }
             Response.Cookies.Add(cartCookie);
 
