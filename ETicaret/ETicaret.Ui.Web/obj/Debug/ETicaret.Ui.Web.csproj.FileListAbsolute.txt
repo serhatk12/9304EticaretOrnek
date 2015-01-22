@@ -94,3 +94,7 @@ C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.W
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\ETicaret.Extensions.pdb
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\FileUploader.dll
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\FileUploader.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\PagedList.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\PagedList.Mvc.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\PagedList.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Ui.Web\bin\PagedList.Mvc.xml

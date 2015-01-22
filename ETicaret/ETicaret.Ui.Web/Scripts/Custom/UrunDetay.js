@@ -3,14 +3,14 @@
     event.preventDefault();
 
     var adet = $('#adet');    
-    if(isNaN(adet.val()) || adet.val() <1)
+    if(isNaN(adet.val()) || adet.val() < 1)
     {
         adet.addClass('invalid');
+        return false;
     }
-    else
-    {
+   
         adet.removeClass('invalid');
-    }
+    
 
     var cart = {
         'UrunId': $('#urunId').val(),

@@ -11,8 +11,7 @@ namespace ETicaret.Ui.Web.Controllers
     {
 
         public ViewResult Index()
-        {
-            return View();
+        {  return View();
         }
 
         public PartialViewResult UrunSlider()

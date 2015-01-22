@@ -42,3 +42,7 @@ C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\obj\Deb
 C:\Users\MP\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\obj\Debug\ETicaret.Service.pdb
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Extensions.dll
 C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\ETicaret.Extensions.pdb
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\PagedList.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\PagedList.Mvc.dll
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\PagedList.xml
+C:\Users\ilker.erhalim\Documents\GitHub\9304EticaretOrnek\ETicaret\ETicaret.Service\bin\Debug\PagedList.Mvc.xml

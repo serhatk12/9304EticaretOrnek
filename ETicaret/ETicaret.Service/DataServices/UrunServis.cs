@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using ETicaret.Extensions.StringExtensions;
 using ETicaret.Types;
 using ETicaret.Data.Dto;
+using PagedList;
+using System.Linq.Expressions;
 namespace ETicaret.Service.DataServices
 {
     public class UrunServis : ServiceBase<Urun>
@@ -42,13 +44,13 @@ namespace ETicaret.Service.DataServices
             foreach (var item in sepet)
             {
                 Urun urn = Db.Urun.FirstOrDefault(x => x.Id == item.UrunId);
-               
-                    item.BirimFiyat = (urn.SonFiyat * item.Adet);
-                    item.UrunAdi = urn.Ad;
-                   
-                    toplamTutar += (item.BirimFiyat);
-                
-                
+
+                item.BirimFiyat = (urn.SonFiyat * item.Adet);
+                item.UrunAdi = urn.Ad;
+
+                toplamTutar += (item.BirimFiyat);
+
+
             }
             return new SepetDto
             {
@@ -61,6 +63,72 @@ namespace ETicaret.Service.DataServices
         {
             Urun urn = Db.Urun.FirstOrDefault(x => x.SayfaYolu == sayfaYolu);
             return urn;
+        }
+
+
+        public IPagedList<Urun> KategoriyeGoreGetir(string kategoriYolu, int page, string orderType)
+        {
+
+            string orderStyle = "asc";
+            string orderBy = "SiraNumarasi";
+            int pageSize = 1;
+            if (!String.IsNullOrEmpty(orderType))
+            {
+                string[] orderValues = orderType.Split('-');
+                orderStyle = orderValues[1];
+                orderBy = orderValues[0];
+            }
+            IPagedList<Urun> urunler = null;
+
+            Expression<Func<Urun, bool>> filterExpression = x => x.Kategori.SayfaYolu == kategoriYolu && !x.SilindiMi;
+
+            switch (orderBy)
+            {
+                case "SiraNumarasi":
+                    if (orderStyle == "asc")
+                    {
+                        urunler = Db.Urun.Where(filterExpression).OrderBy(x => x.SiraNumarasi)
+          .ToPagedList(page, pageSize);
+                    }
+                    else
+                    {
+                        urunler = Db.Urun.Where(filterExpression).OrderByDescending(x => x.SiraNumarasi)
+         .ToPagedList(page, pageSize);
+                    }
+
+                    break;
+
+
+                case "Ad": 
+                    if(orderStyle=="asc")
+                    {
+                        urunler = Db.Urun.Where(filterExpression).OrderBy(x => x.Ad).ToPagedList(page, pageSize); 
+                    }
+                    else
+                    {
+                        urunler = Db.Urun.Where(filterExpression).OrderByDescending(x => x.Ad).ToPagedList(page, pageSize); 
+                    }
+                    
+                    break;
+
+                case "Fiyat":
+                    if(orderStyle=="asc")
+                    {
+                        urunler = Db.Urun.Where(filterExpression).OrderBy(x => x.Fiyat).ToPagedList(page, pageSize);
+                    }
+                    else
+                    {
+                        urunler = Db.Urun.Where(filterExpression).OrderByDescending(x => x.Fiyat).ToPagedList(page, pageSize);
+                    }
+                    
+                    break;
+
+            }
+
+
+
+
+            return urunler;
         }
     }
 }

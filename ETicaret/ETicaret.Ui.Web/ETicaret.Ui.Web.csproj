@@ -53,6 +53,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -346,6 +352,7 @@
     <Content Include="Content\front\images\~intro_texture.png" />
     <Content Include="Content\images\moveactive.png" />
     <Content Include="Content\images\movest.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Yonetim\Views\Shared\_YoneticiLayout.cshtml" />
     <Content Include="Areas\Yonetim\Views\YoneticiAnasayfa\Index.cshtml" />
@@ -412,6 +419,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Yonetim\Attributes\LoginRequired.cs" />
     <Compile Include="Areas\Yonetim\Controllers\BaseController.cs" />
@@ -426,6 +434,7 @@
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SiteUrunController.cs" />
+    <Compile Include="Filters\ErrorHandling.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -483,6 +492,7 @@
     <Content Include="Views\Shared\Partial\_navigationWithLogin.cshtml" />
     <Content Include="Views\Shared\Partial\_sepet.cshtml" />
     <Content Include="Views\SiteUrun\UrunDetay.cshtml" />
+    <Content Include="Views\SiteUrun\KategoriyeGoreGetir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

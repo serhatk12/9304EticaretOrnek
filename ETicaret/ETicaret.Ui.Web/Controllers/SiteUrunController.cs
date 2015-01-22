@@ -1,6 +1,7 @@
 ﻿using ETicaret.Data.Dto;
 using ETicaret.Data.Orm;
 using ETicaret.Ui.Web.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +23,14 @@ namespace ETicaret.Ui.Web.Controllers
             return View(model);
         }
 
-
-        [HttpPost]
-        public JsonResult SepeteEkle(SepetDetayDto model)
+        public ViewResult KategoriyeGoreGetir(string pageSlug,int? page,string orderType)
         {
+            page = page ?? 1;
+            ViewBag.OrderType = orderType;
+            IPagedList<Urun> urunler = Servis.Urun.KategoriyeGoreGetir(pageSlug, ((int)page),orderType);
+            return View(urunler);
 
-            //TODO Sepete ekle değerleri döndür...!!
-            return Json(null);
         }
+     
     }
 }
