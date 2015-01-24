@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -14,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Your Store</title>
     <meta name="description" content="My Store" />
-    
+
 
     <link href="~/Content/front/css/960.css" rel="stylesheet" />
 
@@ -37,7 +36,7 @@
                 <a id="site_logo" href="#">Shoppica store - Premium e-Commerce Theme</a>
 
                 @{
-                Html.RenderAction("Navigation", "Layout");
+                    Html.RenderAction("Navigation", "Layout");
                 }
 
                 <div id="site_search">
@@ -71,8 +70,8 @@
                 </div>
 
                 @{
-                Html.RenderAction("Kategoriler", "Layout");
-                Html.RenderAction("Sepet", "Layout");
+                    Html.RenderAction("Kategoriler", "Layout");
+                    Html.RenderAction("Sepet", "Layout");
                 }
 
 
@@ -91,7 +90,7 @@
                 </div>
             </div>
         </div>
-  
+
         @RenderBody()
 
 

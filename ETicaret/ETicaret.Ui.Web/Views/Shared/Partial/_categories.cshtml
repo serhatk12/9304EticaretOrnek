@@ -1,16 +1,16 @@
-﻿@model List<ETicaret.Data.Dto.KategoriDto>
+﻿@model List<KategoriDto>
 <div id="categories" class="s_nav">
     <ul>
         <li id="menu_home"> <a href="/">Anasayfa</a> </li>
 
-        @foreach(var item in Model)
+        @foreach (var item in Model)
         {
             <li>
                 <a href="/kategoriler/@item.Sayfayolu">@item.Ad</a>
                 <div class="s_submenu">
                     <h3>@item.Ad</h3>
                     <ul class="s_list_1 clearfix">
-                        @foreach(var sub in item.AltKategoriler)
+                        @foreach (var sub in item.AltKategoriler)
                         {
                             <li><a href="/kategoriler/@sub.Sayfayolu">@sub.Ad</a></li>
                         }
@@ -18,7 +18,7 @@
                 </div>
             </li>
         }
-  
-     
+
+
     </ul>
 </div>

@@ -1,24 +1,24 @@
 ﻿@{
     Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
 }
-@model ETicaret.Data.Orm.Kategori
-           
-       <div id="result" class="insertResult"></div>
+@model Kategori
+
+<div id="result" class="insertResult"></div>
 
 <div class="row">
-  
+
     <div class="panel panel-default">
         <div class="panel-heading">
             Kategori Ekle
         </div>
         <div class="panel-body">
-            @using (Html.BeginForm("Ekle", "Kategori", FormMethod.Post, new { @role = "form",@id="kategoriForm"}))
+            @using (Html.BeginForm("Ekle", "Kategori", FormMethod.Post, new { @role = "form", @id = "kategoriForm" }))
             {
                 @Html.TextGroupFor(x => x.Ad)
                 @Html.TextAreaGroupFor(x => x.Aciklama)
                 @Html.DropDownGroupFor(x => x.UstKategori, "kategoriListe", "Yeni bir üst kategori oluşturmak istiyorum")
                 @Html.SubmitButton("Kaydet")
-            
+
             }
         </div>
     </div>

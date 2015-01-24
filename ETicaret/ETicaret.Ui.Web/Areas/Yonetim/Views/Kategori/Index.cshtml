@@ -1,12 +1,11 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
 }
-@model IEnumerable<ETicaret.Data.Orm.Kategori>
-      <form method="post">
-          @Html.DropDownList("kategoriId", (IEnumerable<SelectListItem>)ViewData["kategoriListe"],"Üst Kategoriler", new { @class="form-control",@onchange="this.form.submit()"})
-      </form>
+@model IEnumerable<Kategori>
+<form method="post">
+    @Html.DropDownList("kategoriId", (IEnumerable<SelectListItem>)ViewData["kategoriListe"], "Üst Kategoriler", new { @class = "form-control", @onchange = "this.form.submit()" })
+</form>
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="table-responsive">
@@ -45,5 +44,5 @@
 </div>
 
 @section scripts{
-<script src="~/Scripts/Custom/ListeIslemleri.js"></script>
+    <script src="~/Scripts/Custom/ListeIslemleri.js"></script>
 }

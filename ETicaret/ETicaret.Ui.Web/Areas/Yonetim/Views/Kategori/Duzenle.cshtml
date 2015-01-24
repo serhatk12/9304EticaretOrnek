@@ -2,7 +2,7 @@
     ViewBag.Title = "Duzenle";
     Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
 }
-@model ETicaret.Data.Orm.Kategori
+@model Kategori
 
 <div id="result"></div>
 
@@ -12,7 +12,7 @@
             @Model.Ad
         </div>
         <div class="panel-body">
-            @using (Html.BeginForm("Duzenle", "Kategori", FormMethod.Post, new { @role = "form", @class="ajaxform" }))
+            @using (Html.BeginForm("Duzenle", "Kategori", FormMethod.Post, new { @role = "form", @class = "ajaxform" }))
             {
                 @Html.TextGroupFor(x => x.Ad)
                 @Html.TextAreaGroupFor(x => x.Aciklama)
@@ -23,6 +23,6 @@
     </div>
 </div>
 @section scripts{
-    @Scripts.Render("~/formScripts")   
+    @Scripts.Render("~/formScripts")
 }
 

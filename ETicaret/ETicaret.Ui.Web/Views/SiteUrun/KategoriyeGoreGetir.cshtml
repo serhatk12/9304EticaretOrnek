@@ -4,7 +4,7 @@
 }
 @using PagedList.Mvc
 @using PagedList
-@model IPagedList<ETicaret.Data.Orm.Urun>
+@model IPagedList<Urun>
 
 <link href="~/Content/PagedList.css" rel="stylesheet" />
 
@@ -46,29 +46,29 @@
         <div class="clear"></div>
 
         <div class="s_listing s_list_view clearfix">
-            @foreach(var item in Model)
+            @foreach (var item in Model)
             {
-            <div class="s_item clearfix">
-                <div class="grid_3 alpha"> <a class="s_thumb" href="/urundetay/@item.SayfaYolu"><img src="@item.Resimler.FirstOrDefault().Resim300" title="Leica M7" alt="Leica M7" /></a> </div>
-                <div class="grid_6 omega">
-                    <h3><a href="/urundetay/@item.SayfaYolu">@item.Ad</a></h3>
-                    <p class="s_model">@item.Kategori.Ad</p>
-                    <p class="s_price s_promo_price">
-                        @if(item.IndirimVarMi)
-                        {
-                        <span class="s_old_price">
-                            <span class="s_currency s_before">
-                                ₺
-                            </span>@item.Fiyat
-                        </span>
-                        }
+                <div class="s_item clearfix">
+                    <div class="grid_3 alpha"> <a class="s_thumb" href="/urundetay/@item.SayfaYolu"><img src="@item.Resimler.FirstOrDefault().Resim300" title="Leica M7" alt="Leica M7" /></a> </div>
+                    <div class="grid_6 omega">
+                        <h3><a href="/urundetay/@item.SayfaYolu">@item.Ad</a></h3>
+                        <p class="s_model">@item.Kategori.Ad</p>
+                        <p class="s_price s_promo_price">
+                            @if (item.IndirimVarMi)
+                            {
+                                <span class="s_old_price">
+                                    <span class="s_currency s_before">
+                                        ₺
+                                    </span>@item.Fiyat
+                                </span>
+                            }
 
-                        <span class="s_currency s_before">₺</span>@item.SonFiyat
-                    </p>
-                    <p class="s_description">@item.Aciklama</p>
-                    <a class="s_button_add_to_cart" href="javascript:SepeteEkle(@item.Id,1)"><span class="s_icon_16"><span class="s_icon"></span>Sepete Ekle</span></a>
+                            <span class="s_currency s_before">₺</span>@item.SonFiyat
+                        </p>
+                        <p class="s_description">@item.Aciklama</p>
+                        <a class="s_button_add_to_cart" href="javascript:SepeteEkle(@item.Id,1)"><span class="s_icon_16"><span class="s_icon"></span>Sepete Ekle</span></a>
+                    </div>
                 </div>
-            </div>
 
             }
 
@@ -78,7 +78,7 @@
 
         </div>
 
-      
+
 
     </div>
 
@@ -256,7 +256,7 @@
 <script>
     $('.sort-filter').click(function () {
         document.location = '?orderType=' + $(this).find('a').attr('data-type');
-       
+
         console.log('here');
     });
 </script>

@@ -2,7 +2,7 @@
     ViewBag.Title = "UrunDetay";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
-@model ETicaret.Ui.Web.Models.UrunDetayModel
+@model UrunDetayModel
 <link href="~/Content/front/css/prettyPhoto.css" rel="stylesheet" />
 
 <script src="~/Scripts/Front/jquery/jquery.prettyPhoto.js"></script>
@@ -29,15 +29,15 @@
                 <img id="image" src="@Model.Urun.Resimler.FirstOrDefault().Resim300" title="Leica M7" alt="Leica M7" />
             </a>
         </div>
-     
+
         <div id="product_info" class="grid_4">
             <p class="s_price s_promo_price">
                 @if (Model.Urun.IndirimVarMi)
                 {
                     <span class="s_old_price">
                         @Model.Urun.Fiyat
-                    <span class="s_currency s_after"> ₺</span>
-                </span>
+                        <span class="s_currency s_after"> ₺</span>
+                    </span>
                 }
                 @Model.Urun.Fiyat
                 <span class="s_currency s_after"> ₺</span>
@@ -59,22 +59,22 @@
                     <a class="addthis_button_tweet"></a>
                     <a class="addthis_counter addthis_pill_style"></a>
                 </div>
-              
+
                 <!-- AddThis Button END -->
             </div>
         </div>
         <div class="clearfix"></div>
         <div class="grid_4 omega">
 
-           
+
             <div id="product_buy" class="clearfix">
                 <form method="post" action="/Layout/SepeteEkle" id="frmSepeteEkle">
-                    <input type="hidden" value="@Model.Urun.Id" id="urunId"/>
-                    <label for="product_buy_quantity">Adet:</label>                
+                    <input type="hidden" value="@Model.Urun.Id" id="urunId" />
+                    <label for="product_buy_quantity">Adet:</label>
                     <input id="adet" type="text" size="2" />
                     <a id="add_to_cart" href="javascript:$('#frmSepeteEkle').trigger('submit');" class="s_main_color_bgr"><span class="s_text"><span class="s_icon"></span> Sepete Ekle</span></a>
                 </form>
-                
+
             </div>
         </div>
         <div class="clear"></div>
@@ -113,8 +113,8 @@
             ViewBag.Message1 = "Benzer";
             ViewBag.Message2 = "Ürünler";
         }
-                @Html.Partial("~/Views/Home/Partial/urunGrid.cshtml", Model.BenzerUrunler)
-      
+        @Html.Partial("~/Views/Home/Partial/urunGrid.cshtml", Model.BenzerUrunler)
+
         <div id="product_tags" class="grid_12 alpha omega">
             <h2 class="s_title_1"><span class="s_main_color">Product</span> Tags</h2>
             <div class="clear"></div>

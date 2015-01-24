@@ -1,16 +1,14 @@
 ﻿@{
     Layout = "~/Areas/Yonetim/Views/Shared/_YoneticiLayout.cshtml";
 }
-@model ETicaret.Data.Orm.Urun
+@model Urun
+
 <div id="result" class="insertResult"></div>
-
 <div class="row">
-
     <div class="panel panel-default">
         <div class="panel-heading">
             Urun Ekle
         </div>
-
         <div class="panel-body">
             @using (Html.BeginForm("Ekle", "Urun", FormMethod.Post, new { @role = "form", @class = "ajaxform", @id = "urunForm", @enctype = "multipart/form-data" }))
             {
@@ -29,12 +27,9 @@
                     <label> Resim Seçiniz</label>
                     <input type="file" name="resimler" multiple />
                 </div>
-
                 @Html.SubmitButton("Kaydet")
-
             }
         </div>
-
     </div>
 </div>
 @section scripts{
@@ -64,10 +59,8 @@
             }
         });
     </script>
+
     <script>
-
-
-
         $(document).ready(function () {
             $.get('/Yonetim/Urun/GetCategory', function (response) {
                 console.log(response);

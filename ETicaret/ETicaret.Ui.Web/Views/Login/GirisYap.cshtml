@@ -2,10 +2,8 @@
     ViewBag.Title = "GirisYap";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
+@model MusteriLogin
 
-
-
-@model ETicaret.Ui.Web.Models.MusteriLogin
 <div id="content" class="container_16">
 
     <div id="login_page" class="grid_16">
@@ -38,26 +36,26 @@
             <h2 class="s_title_1"><span class="s_secondary_color">Returning</span> Customer</h2>
 
             <div class="clear"></div>
-          
 
-                @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "login" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="s_row_3 clearfix">
-                     
-                        <br />
-                        <label><strong>E posta</strong></label>
-                        @Html.TextBoxFor(x => x.EPosta, new {@size="35",@class="required"})
 
-                        <br />
-                        @Html.ValidationMessageFor(x=>x.EPosta)
-                        <br />
-                        <label><strong>Password:</strong></label>
-                         @Html.PasswordFor(x => x.Sifre, new { @class="required"})
-                        <br />
-                        @Html.ValidationMessageFor(x=>x.Sifre)
-                    </div>
-                
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "login" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="s_row_3 clearfix">
+
+                    <br />
+                    <label><strong>E posta</strong></label>
+                    @Html.TextBoxFor(x => x.EPosta, new { @size = "35", @class = "required" })
+
+                    <br />
+                    @Html.ValidationMessageFor(x => x.EPosta)
+                    <br />
+                    <label><strong>Password:</strong></label>
+                    @Html.PasswordFor(x => x.Sifre, new { @class = "required" })
+                    <br />
+                    @Html.ValidationMessageFor(x => x.Sifre)
+                </div>
+
 
                 <span class="clear border_ddd"></span>
                 <br />
@@ -67,7 +65,7 @@
                     </ul>
                 </div>
                 <button class="s_button_1 s_main_color_bgr" type="submit"><span class="s_text">Login</span></button>
-                }
+            }
         </div>
 
         <div class="clear"></div>
@@ -75,5 +73,3 @@
     </div>
 
 </div>
-
-
